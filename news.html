@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Press Releases | SSUCOEN</title>
+    <meta name="description" content="Stay updated with the latest news, press releases, and official statements from the Senior Staff Union in Colleges of Education, Nigeria.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ssucoen: {
+                            green: '#0A4A25',
+                            lightgreen: '#116B38',
+                            gold: '#F2A900',
+                            dark: '#1F2937',
+                            light: '#F9FAFB',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .page-hero-overlay { background: linear-gradient(to right, rgba(10, 74, 37, 0.95) 0%, rgba(10, 74, 37, 0.8) 100%); }
+        .mobile-menu-active { transform: translateX(0%); }
+        .mobile-menu-inactive { transform: translateX(-100%); }
+        
+        /* Line clamp for excerpts */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Custom select styling */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body class="font-sans text-ssucoen-dark antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Utility Bar -->
+    <div class="bg-ssucoen-green text-white py-2 text-xs md:text-sm font-medium">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="hidden md:inline-flex items-center"><i class="fa-solid fa-building-columns mr-2 opacity-80"></i> Official Website of SSUCOEN</span>
+                <span class="md:hidden font-bold tracking-wider">SSUCOEN</span>
+            </div>
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <a href="contact.html" class="hover:text-ssucoen-gold transition-colors duration-200"><i class="fa-solid fa-phone mr-1 md:mr-2 opacity-80"></i><span class="hidden md:inline">National Secretariat</span></a>
+                <a href="login.html" class="bg-ssucoen-gold text-ssucoen-green px-3 py-1 rounded hover:bg-white transition-colors duration-200 font-semibold"><i class="fa-solid fa-user-lock mr-1 md:mr-2"></i>Member Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="glass-nav sticky top-0 z-50 border-b border-gray-200 shadow-sm transition-all duration-300 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" onerror="this.src='https://via.placeholder.com/150x150.png?text=SSUCOEN+Logo'">
+                        <div class="hidden lg:block">
+                            <h1 class="font-serif font-bold text-lg leading-tight text-ssucoen-green">SSUCOEN</h1>
+                            <p class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Labour for Honour and Survival</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden xl:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">About</a>
+                    <a href="leadership.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Leadership</a>
+                    <a href="chapters.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Chapters</a>
+                    
+                    <a href="news.html" class="text-ssucoen-green font-semibold border-b-2 border-ssucoen-gold pb-1 py-2">News</a>
+                    
+                    <a href="events.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Events</a>
+                    <a href="documents.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Documents</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Gallery</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden xl:flex items-center">
+                    <a href="contact.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200 mr-6">Contact</a>
+                    <a href="login.html" class="bg-ssucoen-green text-white px-5 py-2.5 rounded hover:bg-ssucoen-lightgreen shadow-md transition-all duration-200 font-medium flex items-center">
+                        Member Access <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="xl:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-ssucoen-green hover:text-ssucoen-lightgreen focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+    <div id="mobile-drawer" class="fixed inset-y-0 left-0 w-[280px] bg-white shadow-2xl z-[70] mobile-menu-inactive transition-transform duration-300 flex flex-col">
+        <div class="p-5 border-b border-gray-100 flex justify-between items-center">
+            <img class="h-10 w-auto" src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" onerror="this.src='https://via.placeholder.com/100x100.png?text=SSUCOEN'">
+            <button id="close-menu-btn" class="text-gray-400 hover:text-gray-600 p-2">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto py-4 px-4">
+            <nav class="space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Home</a>
+                <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">About</a>
+                <a href="leadership.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Leadership</a>
+                <a href="chapters.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Chapters</a>
+                <a href="news.html" class="block px-3 py-3 rounded-md text-base font-semibold bg-gray-50 text-ssucoen-green">News</a>
+                <a href="events.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Events</a>
+                <a href="documents.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Documents</a>
+                <a href="gallery.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Gallery</a>
+                <a href="contact.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Contact</a>
+            </nav>
+        </div>
+        <div class="p-4 border-t border-gray-100">
+            <a href="login.html" class="w-full flex justify-center items-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-ssucoen-green hover:bg-ssucoen-lightgreen">
+                Member Access
+            </a>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+        
+        <!-- Page Hero -->
+        <section class="relative bg-ssucoen-green py-20 lg:py-24 overflow-hidden border-b-[6px] border-ssucoen-gold">
+            <div class="absolute inset-0 z-0">
+                <img src="hero-news.webp" alt="News and Media abstract" class="w-full h-full object-cover object-center opacity-10" onerror="this.src='https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'">
+                <div class="absolute inset-0 page-hero-overlay"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Breadcrumbs -->
+                <nav class="flex justify-center mb-6" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3 text-sm text-gray-300">
+                        <li class="inline-flex items-center">
+                            <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-chevron-right text-xs mx-2"></i>
+                                <span class="text-ssucoen-gold font-medium" aria-current="page">Newsroom</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+                
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">News & Press Releases</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto font-light">
+                    Official updates, statements, and media publications from the National Executive Council.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search & Filter Area -->
+        <section class="py-6 bg-white border-b border-gray-200 shadow-sm relative z-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <form class="flex flex-col md:flex-row gap-4">
+                    <!-- Search Input -->
+                    <div class="flex-grow relative">
+                        <label for="search" class="sr-only">Search News</label>
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                        </div>
+                        <input type="text" name="search" id="search" class="focus:ring-ssucoen-green focus:border-ssucoen-green block w-full pl-10 pr-3 py-2.5 sm:text-sm border-gray-300 rounded-md border" placeholder="Search articles, keywords, or topics...">
+                    </div>
+                    
+                    <!-- Category Filter -->
+                    <div class="md:w-64">
+                        <label for="category" class="sr-only">Filter by Category</label>
+                        <select id="category" name="category" class="focus:ring-ssucoen-green focus:border-ssucoen-green block w-full py-2.5 px-3 sm:text-sm border-gray-300 rounded-md border text-gray-700 bg-white">
+                            <option value="">All Categories</option>
+                            <option value="press">Press Releases</option>
+                            <option value="welfare">Member Welfare</option>
+                            <option value="chapter">Chapter News</option>
+                            <option value="statements">Official Statements</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="button" class="w-full md:w-auto h-full min-h-[42px] bg-gray-900 hover:bg-gray-800 text-white px-6 font-medium rounded-md shadow-sm flex items-center justify-center transition-colors">
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="py-12 bg-gray-50 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="inline-flex items-center gap-2 mb-6">
+                    <span class="w-8 h-0.5 bg-ssucoen-gold"></span>
+                    <span class="text-ssucoen-green font-bold uppercase tracking-wider text-sm">Featured Story</span>
+                </div>
+
+                <article class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col lg:flex-row hover:shadow-2xl transition-shadow duration-300 group">
+                    <div class="w-full lg:w-1/2 relative bg-gray-200">
+                        <img src="news-featured.webp" alt="SSUCOEN National Conference" class="w-full h-full object-cover min-h-[300px] lg:min-h-full transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
+                        <div class="absolute top-6 left-6">
+                            <span class="bg-ssucoen-green text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wide shadow-md">Press Release</span>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="flex items-center text-gray-500 text-sm mb-4">
+                            <i class="fa-regular fa-calendar mr-2 text-ssucoen-gold"></i>
+                            <span>October 15, 2026</span>
+                            <span class="mx-3">&bull;</span>
+                            <i class="fa-regular fa-clock mr-2 text-ssucoen-gold"></i>
+                            <span>4 min read</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-4 leading-tight group-hover:text-ssucoen-green transition-colors">
+                            <a href="#">SSUCOEN Concludes National Delegates Conference, Elects New Executives</a>
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-8 line-clamp-3">
+                            The Senior Staff Union in Colleges of Education has successfully concluded its quadrennial national delegates conference in Abuja. The event, attended by chapter chairmen from all zones, produced a new set of leaders to pilot the affairs of the union for the next four years while renewing commitments to member welfare.
+                        </p>
+                        <div class="mt-auto">
+                            <a href="#" class="inline-flex items-center bg-ssucoen-light hover:bg-gray-100 border border-gray-200 text-ssucoen-green font-semibold py-2.5 px-6 rounded transition-colors">
+                                Read Full Article <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- News Grid -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <h2 class="text-2xl font-serif font-bold text-gray-900 mb-8 border-b border-gray-200 pb-4">Latest Updates</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- News Card 1 -->
+                    <article class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden group">
+                        <div class="aspect-video relative bg-gray-200 overflow-hidden">
+                            <img src="news-01.webp" alt="News thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1555421689-d68471e189f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-ssucoen-gold text-ssucoen-green text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Member Welfare</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="text-xs text-gray-500 mb-3 flex items-center">
+                                <i class="fa-regular fa-calendar mr-1.5"></i> October 02, 2026
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-ssucoen-green transition-colors">
+                                <a href="#">Negotiations on New Salary Structure Reach Advanced Stage</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-5 line-clamp-3 flex-grow">
+                                The leadership of SSUCOEN wishes to inform all members that negotiations with the Federal Government regarding the implementation of the new salary structure are progressing positively and finalization is expected soon.
+                            </p>
+                            <a href="#" class="text-ssucoen-green font-semibold text-sm hover:underline mt-auto flex items-center">
+                                Read Article <i class="fa-solid fa-angle-right ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 2 -->
+                    <article class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden group">
+                        <div class="aspect-video relative bg-gray-200 overflow-hidden">
+                            <img src="news-02.webp" alt="News thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-gray-800 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Chapter News</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="text-xs text-gray-500 mb-3 flex items-center">
+                                <i class="fa-regular fa-calendar mr-1.5"></i> September 28, 2026
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-ssucoen-green transition-colors">
+                                <a href="#">South-West Zone Holds Triennial Delegates Conference in Oyo</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-5 line-clamp-3 flex-grow">
+                                SSUCOEN chapters across the South-West geopolitical zone converged in Oyo State for their triennial delegates conference to review regional welfare challenges and elect zonal coordinators.
+                            </p>
+                            <a href="#" class="text-ssucoen-green font-semibold text-sm hover:underline mt-auto flex items-center">
+                                Read Article <i class="fa-solid fa-angle-right ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 3 -->
+                    <article class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden group">
+                        <div class="aspect-video relative bg-gray-200 overflow-hidden">
+                            <img src="news-03.webp" alt="News thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Official Statement</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="text-xs text-gray-500 mb-3 flex items-center">
+                                <i class="fa-regular fa-calendar mr-1.5"></i> September 15, 2026
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-ssucoen-green transition-colors">
+                                <a href="#">Communique Issued at the End of Emergency NEC Meeting</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-5 line-clamp-3 flex-grow">
+                                Following the emergency meeting of the National Executive Council held at the National Secretariat, SSUCOEN has issued a 5-point communique addressing critical national education policies.
+                            </p>
+                            <a href="#" class="text-ssucoen-green font-semibold text-sm hover:underline mt-auto flex items-center">
+                                Read Article <i class="fa-solid fa-angle-right ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 4 -->
+                    <article class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden group">
+                        <div class="aspect-video relative bg-gray-200 overflow-hidden">
+                            <img src="news-04.webp" alt="News thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-ssucoen-gold text-ssucoen-green text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Member Welfare</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="text-xs text-gray-500 mb-3 flex items-center">
+                                <i class="fa-regular fa-calendar mr-1.5"></i> August 22, 2026
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-ssucoen-green transition-colors">
+                                <a href="#">Launch of the Comprehensive SSUCOEN Healthcare Initiative</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-5 line-clamp-3 flex-grow">
+                                The National Secretariat is proud to announce the rollout of a supplementary healthcare scheme designed specifically for registered senior staff across all recognized colleges.
+                            </p>
+                            <a href="#" class="text-ssucoen-green font-semibold text-sm hover:underline mt-auto flex items-center">
+                                Read Article <i class="fa-solid fa-angle-right ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 5 -->
+                    <article class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden group">
+                        <div class="aspect-video relative bg-gray-200 overflow-hidden">
+                            <img src="news-05.webp" alt="News thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-ssucoen-green text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Press Release</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="text-xs text-gray-500 mb-3 flex items-center">
+                                <i class="fa-regular fa-calendar mr-1.5"></i> August 10, 2026
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-ssucoen-green transition-colors">
+                                <a href="#">SSUCOEN Condemns Victimization of Union Leaders in State Institutions</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-5 line-clamp-3 flex-grow">
+                                The National body expresses deep concern over reports of arbitrary queries and suspension of union executives in select state-owned Colleges of Education, demanding immediate reversal.
+                            </p>
+                            <a href="#" class="text-ssucoen-green font-semibold text-sm hover:underline mt-auto flex items-center">
+                                Read Article <i class="fa-solid fa-angle-right ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 6 -->
+                    <article class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden group">
+                        <div class="aspect-video relative bg-gray-200 overflow-hidden">
+                            <img src="news-06.webp" alt="News thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-gray-800 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Chapter News</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="text-xs text-gray-500 mb-3 flex items-center">
+                                <i class="fa-regular fa-calendar mr-1.5"></i> July 25, 2026
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-ssucoen-green transition-colors">
+                                <a href="#">FCE Kano Chapter Commissions New Administrative Secretariat</a>
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-5 line-clamp-3 flex-grow">
+                                A major milestone was achieved as the SSUCOEN chapter of Federal College of Education, Kano commissioned its newly built multi-purpose union secretariat to serve its members better.
+                            </p>
+                            <a href="#" class="text-ssucoen-green font-semibold text-sm hover:underline mt-auto flex items-center">
+                                Read Article <i class="fa-solid fa-angle-right ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-16 flex justify-center border-t border-gray-200 pt-8">
+                    <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                        <a href="#" class="relative inline-flex items-center px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Previous</span>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <!-- Current: "z-10 bg-ssucoen-green border-ssucoen-green text-white", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
+                        <a href="#" aria-current="page" class="z-10 bg-ssucoen-green border-ssucoen-green text-white relative inline-flex items-center px-4 py-2 border text-sm font-medium">1</a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">2</a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">3</a>
+                        <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">...</span>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">12</a>
+                        <a href="#" class="relative inline-flex items-center px-3 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Next</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+
+            </div>
+        </section>
+        
+        <section class="bg-ssucoen-light border-t border-gray-200 py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-gray-200">
+                    <i class="fa-regular fa-envelope text-2xl text-ssucoen-green"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold text-gray-900 mb-3">Never Miss an Official Update</h3>
+                <p class="text-gray-600 mb-6">Registered members are advised to regularly check their portal. For general public and non-member staff, subscribe to our institutional bulletins.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-3 justify-center max-w-lg mx-auto">
+                    <input type="email" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-ssucoen-green focus:border-transparent" required>
+                    <button type="submit" class="bg-ssucoen-green text-white font-bold py-3 px-6 rounded hover:bg-ssucoen-lightgreen transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-[6px] border-ssucoen-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Column -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6 bg-white p-3 rounded inline-block">
+                        <img src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" class="h-12 w-auto" onerror="this.src='https://via.placeholder.com/150x150.png?text=Logo'">
+                    </div>
+                    <h3 class="font-serif font-bold text-lg mb-2 text-gray-100">Senior Staff Union in Colleges of Education, Nigeria</h3>
+                    <p class="text-sm text-ssucoen-gold font-bold uppercase tracking-wider mb-4">Labour for Honour and Survival</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        The official national body advocating for the welfare and professional interests of senior non-teaching staff in Colleges of Education across Nigeria.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> About SSUCOEN</a></li>
+                        <li><a href="leadership.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> National Leadership</a></li>
+                        <li><a href="chapters.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Our Chapters</a></li>
+                        <li><a href="news.html" class="text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> News & Press Releases</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Events Calendar</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Photo Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Member Resources -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Member Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="login.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Member Portal Login</a></li>
+                        <li><a href="register.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Account Registration</a></li>
+                        <li><a href="documents.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Document Library</a></li>
+                        <li><a href="documents.html#constitution" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Union Constitution</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Support & Grievances</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Contact Secretariat</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 text-ssucoen-gold mr-3 w-4 text-center"></i>
+                            <span class="text-gray-400 text-sm leading-relaxed">
+                                [Placeholder Address]<br>
+                                National Secretariat,<br>
+                                FCT, Abuja, Nigeria
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone text-ssucoen-gold mr-3 w-4 text-center"></i>
+                            <span class="text-gray-400 text-sm">[Official Phone Number]</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope text-ssucoen-gold mr-3 w-4 text-center"></i>
+                            <span class="text-gray-400 text-sm">info@ssucoen.org.ng</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Senior Staff Union in Colleges of Education, Nigeria (SSUCOEN). All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-drawer-overlay');
+            const body = document.body;
+
+            function openMenu() {
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    overlay.classList.add('opacity-100');
+                    drawer.classList.remove('mobile-menu-inactive');
+                    drawer.classList.add('mobile-menu-active');
+                }, 10);
+                body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0');
+                drawer.classList.remove('mobile-menu-active');
+                drawer.classList.add('mobile-menu-inactive');
+                
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 300);
+                body.style.overflow = 'auto';
+            }
+
+            mobileBtn.addEventListener('click', openMenu);
+            closeBtn.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>
