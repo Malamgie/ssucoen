@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard | SSUCOEN Secure Portal</title>
+    <meta name="description" content="SSUCOEN Secure Member Dashboard. Access your profile, dues, documents, and union announcements.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ssucoen: {
+                            green: '#0A4A25',
+                            lightgreen: '#116B38',
+                            gold: '#F2A900',
+                            dark: '#1F2937',
+                            light: '#F9FAFB',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Dashboard Specific Styles */
+        body { background-color: #f3f4f6; }
+        .sidebar-active { transform: translateX(0%); }
+        .sidebar-inactive { transform: translateX(-100%); }
+        @media (min-width: 1024px) {
+            .sidebar-inactive { transform: translateX(0%); } /* Always visible on lg screens */
+        }
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left-color: #F2A900;
+            color: white;
+        }
+        .status-badge {
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+<body class="font-sans text-ssucoen-dark antialiased h-screen flex overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/80 z-40 hidden lg:hidden transition-opacity opacity-0"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-ssucoen-green text-white z-50 flex flex-col transition-transform duration-300 sidebar-inactive lg:static lg:translate-x-0 shadow-2xl lg:shadow-none">
+        
+        <!-- Sidebar Header (Logo) -->
+        <div class="h-20 flex items-center px-6 bg-gray-900/30 border-b border-white/10 shrink-0">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" class="h-10 w-auto bg-white rounded p-0.5" onerror="this.src='https://via.placeholder.com/100x100.png?text=Logo'">
+                <div>
+                    <h1 class="font-serif font-bold text-lg leading-none tracking-tight">SSUCOEN</h1>
+                    <span class="text-[9px] uppercase tracking-wider text-gray-300 font-medium">Member Portal</span>
+                </div>
+            </a>
+            <!-- Mobile Close Btn -->
+            <button id="close-sidebar-btn" class="ml-auto text-gray-300 hover:text-white lg:hidden">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1 custom-scrollbar">
+            <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Main Menu</p>
+            
+            <a href="#" class="nav-link active flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-solid fa-gauge-high w-6 text-center mr-2"></i> Dashboard
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-regular fa-user w-6 text-center mr-2"></i> My Profile
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-regular fa-id-badge w-6 text-center mr-2"></i> Membership Card
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-solid fa-wallet w-6 text-center mr-2"></i> Union Dues
+            </a>
+            
+            <div class="mt-8 mb-2">
+                <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Resources & Updates</p>
+            </div>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors justify-between">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-bullhorn w-6 text-center mr-2"></i> Announcements
+                </div>
+                <span class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">2</span>
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-regular fa-calendar-days w-6 text-center mr-2"></i> Events
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-regular fa-folder-open w-6 text-center mr-2"></i> Secure Documents
+            </a>
+            
+            <div class="mt-8 mb-2">
+                <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Help & Settings</p>
+            </div>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-solid fa-scale-balanced w-6 text-center mr-2"></i> File Grievance
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-solid fa-headset w-6 text-center mr-2"></i> Portal Support
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                <i class="fa-solid fa-gear w-6 text-center mr-2"></i> Settings
+            </a>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="p-4 bg-gray-900/40 border-t border-white/10 shrink-0">
+            <a href="../login.html" class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-red-500/20 rounded-md transition-colors group">
+                <i class="fa-solid fa-arrow-right-from-bracket w-6 text-center mr-2 group-hover:text-red-400"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col h-screen overflow-hidden">
+        
+        <!-- Topbar -->
+        <header class="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 shrink-0 z-10 shadow-sm">
+            <!-- Mobile Menu Btn -->
+            <button id="open-sidebar-btn" class="text-gray-500 hover:text-gray-700 focus:outline-none lg:hidden">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Search / Breadcrumb -->
+            <div class="hidden sm:flex flex-1 ml-6">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-gray-50 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm transition-colors" placeholder="Search documents, announcements...">
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="ml-auto flex items-center space-x-4 sm:space-x-6">
+                <button class="text-gray-400 hover:text-gray-600 relative p-1">
+                    <span class="sr-only">View notifications</span>
+                    <i class="fa-regular fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+                </button>
+
+                <!-- Profile Dropdown (Visual only for prototype) -->
+                <div class="relative flex items-center gap-3 border-l border-gray-200 pl-4 sm:pl-6 cursor-pointer group">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-bold text-gray-900 leading-tight">Comrade John Doe</p>
+                        <p class="text-xs text-gray-500 font-medium">SSU-2026-8942</p>
+                    </div>
+                    <div class="h-10 w-10 rounded-full bg-ssucoen-green text-white flex items-center justify-center font-bold shadow-sm border-2 border-white ring-2 ring-gray-100">
+                        JD
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-hover:text-gray-600 transition-colors"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Content -->
+        <main class="flex-1 overflow-y-auto bg-gray-50 p-4 sm:p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto space-y-8">
+                
+                <!-- Welcome Banner -->
+                <div class="bg-ssucoen-green rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden shadow-lg border border-gray-900/20">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-bl-full pointer-events-none"></div>
+                    <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-ssucoen-gold opacity-10 rounded-full pointer-events-none"></div>
+                    
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-1">Welcome back, Comrade John!</h2>
+                            <p class="text-gray-200 text-sm sm:text-base">Your membership portal is secure. Here is your account overview.</p>
+                        </div>
+                        
+                        <!-- Status Badge Area -->
+                        <div class="flex flex-wrap gap-3 status-badge rounded-xl p-4 shrink-0">
+                            <div class="px-3 border-r border-white/20">
+                                <p class="text-[10px] text-gray-300 uppercase tracking-wider mb-0.5">Status</p>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]"></span>
+                                    <span class="font-bold text-sm">ACTIVE</span>
+                                </div>
+                            </div>
+                            <div class="px-3 border-r border-white/20">
+                                <p class="text-[10px] text-gray-300 uppercase tracking-wider mb-0.5">Chapter</p>
+                                <p class="font-bold text-sm">FCE (T) Akoka</p>
+                            </div>
+                            <div class="pl-3">
+                                <p class="text-[10px] text-gray-300 uppercase tracking-wider mb-0.5">Member ID</p>
+                                <p class="font-mono font-bold text-sm text-ssucoen-gold">SSU-2026-8942</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- Stat Card 1 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-money-check-dollar"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Dues Status</p>
+                            <p class="text-lg font-bold text-gray-900">Up to Date</p>
+                            <p class="text-xs text-green-600 font-medium mt-0.5"><i class="fa-solid fa-check mr-1"></i> Oct 2026 Paid</p>
+                        </div>
+                    </div>
+
+                    <!-- Stat Card 2 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Secure Docs</p>
+                            <p class="text-lg font-bold text-gray-900">12 Available</p>
+                            <a href="#" class="text-xs text-blue-600 font-medium hover:underline mt-0.5">View Library &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Stat Card 3 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-ssucoen-gold/10 text-yellow-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-regular fa-calendar-days"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Upcoming Events</p>
+                            <p class="text-lg font-bold text-gray-900">2 Pending</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Next: Nov 12</p>
+                        </div>
+                    </div>
+
+                    <!-- Stat Card 4 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-regular fa-bell"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Notifications</p>
+                            <p class="text-lg font-bold text-gray-900">2 Unread</p>
+                            <a href="#" class="text-xs text-red-600 font-medium hover:underline mt-0.5">Check Inbox &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Grid -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 hover:border-ssucoen-green hover:shadow-md transition-all flex flex-col items-center justify-center text-center gap-3 group">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 group-hover:bg-ssucoen-green/10 flex items-center justify-center transition-colors">
+                                <i class="fa-regular fa-id-badge text-xl text-gray-600 group-hover:text-ssucoen-green"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-gray-700">Digital ID Card</span>
+                        </button>
+                        
+                        <button class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 hover:border-ssucoen-green hover:shadow-md transition-all flex flex-col items-center justify-center text-center gap-3 group">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 group-hover:bg-ssucoen-green/10 flex items-center justify-center transition-colors">
+                                <i class="fa-regular fa-pen-to-square text-xl text-gray-600 group-hover:text-ssucoen-green"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-gray-700">Update Profile</span>
+                        </button>
+                        
+                        <button class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 hover:border-ssucoen-green hover:shadow-md transition-all flex flex-col items-center justify-center text-center gap-3 group">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 group-hover:bg-ssucoen-green/10 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-file-invoice text-xl text-gray-600 group-hover:text-ssucoen-green"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-gray-700">Pay Dues</span>
+                        </button>
+                        
+                        <button class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 hover:border-red-400 hover:shadow-md transition-all flex flex-col items-center justify-center text-center gap-3 group">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 group-hover:bg-red-50 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-scale-balanced text-xl text-gray-600 group-hover:text-red-500"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-gray-700">File Grievance</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Content Split -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Left Column (Announcements) -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-bold text-gray-900">Recent Announcements</h3>
+                            <a href="#" class="text-sm text-ssucoen-green font-medium hover:underline">View All</a>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 divide-y divide-gray-100">
+                            <!-- Notice 1 (Unread) -->
+                            <div class="p-5 flex gap-4 bg-blue-50/50 hover:bg-gray-50 transition-colors">
+                                <div class="shrink-0 mt-1">
+                                    <span class="flex h-3 w-3 relative">
+                                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                      <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                                    </span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-xs font-bold text-ssucoen-green uppercase tracking-wide">National Secretariat</span>
+                                        <span class="text-xs text-gray-500">2 hours ago</span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-gray-900 mb-1"><a href="#" class="hover:text-ssucoen-green">Update on New Salary Structure Implementation</a></h4>
+                                    <p class="text-sm text-gray-600 line-clamp-2">Please be informed that the committee has concluded the final draft of the implementation matrix. A detailed circular will be available in the document library shortly.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Notice 2 -->
+                            <div class="p-5 flex gap-4 hover:bg-gray-50 transition-colors">
+                                <div class="shrink-0 mt-1">
+                                    <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-xs font-bold text-gray-500 uppercase tracking-wide">Chapter Exco (FCE Akoka)</span>
+                                        <span class="text-xs text-gray-500">Yesterday</span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-gray-900 mb-1"><a href="#" class="hover:text-ssucoen-green">Notice of Emergency Chapter Congress</a></h4>
+                                    <p class="text-sm text-gray-600 line-clamp-2">All members are requested to attend a brief emergency congress scheduled for Thursday at the College Main Auditorium to discuss local welfare issues.</p>
+                                </div>
+                            </div>
+
+                            <!-- Notice 3 -->
+                            <div class="p-5 flex gap-4 hover:bg-gray-50 transition-colors">
+                                <div class="shrink-0 mt-1">
+                                    <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-xs font-bold text-gray-500 uppercase tracking-wide">System Admin</span>
+                                        <span class="text-xs text-gray-500">Oct 12, 2026</span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-gray-900 mb-1"><a href="#" class="hover:text-ssucoen-green">Portal Maintenance Scheduled</a></h4>
+                                    <p class="text-sm text-gray-600 line-clamp-2">The member portal will undergo routine maintenance this weekend. Access to the document library may be intermittent.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (Upcoming Events & Docs) -->
+                    <div class="space-y-8">
+                        
+                        <!-- Events -->
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">My Schedule</h3>
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                                <ul class="space-y-5">
+                                    <li class="flex gap-4">
+                                        <div class="w-12 h-12 bg-ssucoen-green/10 text-ssucoen-green rounded flex flex-col items-center justify-center shrink-0 border border-ssucoen-green/20">
+                                            <span class="text-[10px] font-bold uppercase leading-none mb-1">Nov</span>
+                                            <span class="text-lg font-bold leading-none">12</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-sm text-gray-900 line-clamp-1">NEC Meeting (Virtual Access)</h4>
+                                            <p class="text-xs text-gray-500 mt-1"><i class="fa-regular fa-clock mr-1"></i> 10:00 AM WAT</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-4">
+                                        <div class="w-12 h-12 bg-gray-100 text-gray-600 rounded flex flex-col items-center justify-center shrink-0 border border-gray-200">
+                                            <span class="text-[10px] font-bold uppercase leading-none mb-1">Nov</span>
+                                            <span class="text-lg font-bold leading-none">20</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-sm text-gray-900 line-clamp-1">Chapter Congress</h4>
+                                            <p class="text-xs text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> College Auditorium</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button class="w-full mt-5 py-2 border border-gray-200 rounded text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors">View Full Calendar</button>
+                            </div>
+                        </div>
+
+                        <!-- Latest Secure Docs -->
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">Recent Secure Docs</h3>
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 space-y-3">
+                                <a href="#" class="flex items-center p-3 rounded-lg border border-gray-100 hover:border-ssucoen-green hover:bg-gray-50 transition-all group">
+                                    <i class="fa-solid fa-file-pdf text-red-500 text-xl mr-3"></i>
+                                    <div class="flex-1">
+                                        <h4 class="text-sm font-bold text-gray-900 line-clamp-1 group-hover:text-ssucoen-green">Q3 Financial Report (Internal)</h4>
+                                        <p class="text-xs text-gray-500">Added yesterday</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex items-center p-3 rounded-lg border border-gray-100 hover:border-ssucoen-green hover:bg-gray-50 transition-all group">
+                                    <i class="fa-solid fa-file-word text-blue-600 text-xl mr-3"></i>
+                                    <div class="flex-1">
+                                        <h4 class="text-sm font-bold text-gray-900 line-clamp-1 group-hover:text-ssucoen-green">Updated Grievance Form v2</h4>
+                                        <p class="text-xs text-gray-500">Oct 10, 2026</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Footer spacer -->
+                <div class="h-8"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts for Dashboard Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const openBtn = document.getElementById('open-sidebar-btn');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            function openSidebar() {
+                sidebar.classList.remove('sidebar-inactive');
+                sidebar.classList.add('sidebar-active');
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    overlay.classList.add('opacity-100');
+                }, 10);
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('sidebar-active');
+                sidebar.classList.add('sidebar-inactive');
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 300);
+            }
+
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
+</body>
+</html>
