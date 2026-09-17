@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Admin Portal | SSUCOEN</title>
+    <meta name="description" content="Secure administrative portal for SSUCOEN National Executives and Secretariat staff.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ssucoen: {
+                            green: '#0A4A25',
+                            lightgreen: '#116B38',
+                            gold: '#F2A900',
+                            dark: '#111827', /* Deeper dark for admin */
+                            light: '#F9FAFB',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Admin Specific Styles */
+        body { background-color: #f3f4f6; }
+        .sidebar-active { transform: translateX(0%); }
+        .sidebar-inactive { transform: translateX(-100%); }
+        @media (min-width: 1024px) {
+            .sidebar-inactive { transform: translateX(0%); }
+        }
+        /* Custom Scrollbar for Sidebar */
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb { background: #4B5563; }
+        
+        .nav-link.active {
+            background-color: #1F2937;
+            border-left-color: #F2A900;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased h-screen flex overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/80 z-40 hidden lg:hidden transition-opacity opacity-0"></div>
+
+    <!-- Admin Sidebar (Darker theme for administrative distinction) -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-ssucoen-dark text-gray-300 z-50 flex flex-col transition-transform duration-300 sidebar-inactive lg:static lg:translate-x-0 shadow-2xl">
+        
+        <!-- Sidebar Header (Logo) -->
+        <div class="h-20 flex items-center px-6 bg-gray-950 border-b border-gray-800 shrink-0">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <img src="../IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" class="h-10 w-auto bg-white rounded p-0.5" onerror="this.src='https://via.placeholder.com/100x100.png?text=Logo'">
+                <div>
+                    <h1 class="font-serif font-bold text-lg leading-none tracking-tight text-white group-hover:text-ssucoen-gold transition-colors">SSUCOEN</h1>
+                    <span class="text-[9px] uppercase tracking-wider text-ssucoen-gold font-bold">Admin Portal</span>
+                </div>
+            </a>
+            <!-- Mobile Close Btn -->
+            <button id="close-sidebar-btn" class="ml-auto text-gray-400 hover:text-white lg:hidden">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1 custom-scrollbar">
+            <p class="px-3 text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">System Overview</p>
+            
+            <a href="#" class="nav-link active flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-chart-pie w-6 text-center mr-2 text-gray-400"></i> Dashboard
+            </a>
+            
+            <div class="mt-6 mb-2">
+                <p class="px-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Directory Management</p>
+            </div>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors justify-between">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-users w-6 text-center mr-2 text-gray-400"></i> Members
+                </div>
+                <span class="bg-ssucoen-gold text-ssucoen-dark text-[10px] font-bold px-1.5 py-0.5 rounded-full">12 New</span>
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-building-flag w-6 text-center mr-2 text-gray-400"></i> Chapters
+            </a>
+
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-user-tie w-6 text-center mr-2 text-gray-400"></i> Leadership
+            </a>
+            
+            <div class="mt-6 mb-2">
+                <p class="px-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Content & Media</p>
+            </div>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-newspaper w-6 text-center mr-2 text-gray-400"></i> News & Press
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-regular fa-calendar-days w-6 text-center mr-2 text-gray-400"></i> Events Calendar
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-file-shield w-6 text-center mr-2 text-gray-400"></i> Document Library
+            </a>
+
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-images w-6 text-center mr-2 text-gray-400"></i> Photo Gallery
+            </a>
+            
+            <div class="mt-6 mb-2">
+                <p class="px-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Administration</p>
+            </div>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors justify-between">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-scale-balanced w-6 text-center mr-2 text-gray-400"></i> Grievances
+                </div>
+                <span class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3 Open</span>
+            </a>
+            
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-file-invoice-dollar w-6 text-center mr-2 text-gray-400"></i> Finance & Dues
+            </a>
+
+            <a href="#" class="nav-link flex items-center px-3 py-2.5 rounded-md border-l-4 border-transparent text-sm font-medium hover:bg-gray-800 hover:text-white transition-colors">
+                <i class="fa-solid fa-gear w-6 text-center mr-2 text-gray-400"></i> System Settings
+            </a>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="p-4 bg-gray-950 border-t border-gray-800 shrink-0">
+            <a href="../login.html" class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 rounded-md transition-colors">
+                <i class="fa-solid fa-arrow-right-from-bracket w-6 text-center mr-2"></i> Secure Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col h-screen overflow-hidden">
+        
+        <!-- Admin Topbar -->
+        <header class="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 shrink-0 z-10 shadow-sm">
+            <!-- Mobile Menu Btn -->
+            <button id="open-sidebar-btn" class="text-gray-500 hover:text-gray-700 focus:outline-none lg:hidden">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Search / Breadcrumb -->
+            <div class="hidden sm:flex flex-1 ml-6 items-center">
+                <h2 class="text-xl font-serif font-bold text-gray-800 border-r border-gray-300 pr-6 mr-6">Dashboard Overview</h2>
+                <div class="relative w-full max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-gray-50 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm transition-colors" placeholder="Search members, chapters, or documents...">
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="ml-auto flex items-center space-x-4 sm:space-x-6">
+                <!-- Notifications -->
+                <button class="text-gray-400 hover:text-gray-600 relative p-1">
+                    <span class="sr-only">View system notifications</span>
+                    <i class="fa-solid fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"></span>
+                </button>
+
+                <!-- Admin Profile Dropdown -->
+                <div class="relative flex items-center gap-3 pl-4 sm:pl-6 cursor-pointer group border-l border-gray-200">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-bold text-gray-900 leading-tight">System Admin</p>
+                        <p class="text-xs text-gray-500 font-medium">National Secretariat</p>
+                    </div>
+                    <div class="h-10 w-10 rounded-lg bg-gray-900 text-ssucoen-gold flex items-center justify-center font-bold shadow-sm border border-gray-700">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Content -->
+        <main class="flex-1 overflow-y-auto bg-gray-50 p-4 sm:p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto space-y-8">
+                
+                <!-- Quick Actions Bar -->
+                <div class="flex flex-wrap gap-3 items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                    <div class="flex items-center text-sm font-semibold text-gray-600 hidden md:flex">
+                        <i class="fa-solid fa-bolt text-ssucoen-gold mr-2 text-lg"></i> Quick Actions:
+                    </div>
+                    <div class="flex flex-wrap gap-2 md:gap-3 w-full md:w-auto">
+                        <button class="flex-1 md:flex-none bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green px-4 py-2 rounded-md text-sm font-semibold transition-colors shadow-sm flex justify-center items-center">
+                            <i class="fa-solid fa-user-plus mr-2"></i> Add Member
+                        </button>
+                        <button class="flex-1 md:flex-none bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green px-4 py-2 rounded-md text-sm font-semibold transition-colors shadow-sm flex justify-center items-center">
+                            <i class="fa-solid fa-bullhorn mr-2"></i> Publish News
+                        </button>
+                        <button class="flex-1 md:flex-none bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green px-4 py-2 rounded-md text-sm font-semibold transition-colors shadow-sm flex justify-center items-center">
+                            <i class="fa-solid fa-file-arrow-up mr-2"></i> Upload Doc
+                        </button>
+                        <button class="flex-1 md:flex-none bg-ssucoen-green text-white hover:bg-ssucoen-lightgreen px-4 py-2 rounded-md text-sm font-bold transition-colors shadow-sm flex justify-center items-center">
+                            <i class="fa-solid fa-plus mr-2"></i> Create Event
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Top Metrics Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6">
+                    <!-- Metric 1 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Total Members</p>
+                            <div class="p-1.5 bg-blue-50 text-blue-600 rounded">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">10,482</h3>
+                        <p class="text-xs text-green-600 font-medium flex items-center mt-auto">
+                            <i class="fa-solid fa-arrow-trend-up mr-1"></i> +124 this month
+                        </p>
+                    </div>
+                    
+                    <!-- Metric 2 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col border-b-4 border-b-green-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Active</p>
+                            <div class="p-1.5 bg-green-50 text-green-600 rounded">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">9,840</h3>
+                        <p class="text-xs text-gray-500 font-medium mt-auto">93% of total</p>
+                    </div>
+
+                    <!-- Metric 3 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col border-b-4 border-b-yellow-400">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Pending Auth</p>
+                            <div class="p-1.5 bg-yellow-50 text-yellow-600 rounded">
+                                <i class="fa-solid fa-user-clock"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">142</h3>
+                        <p class="text-xs text-gray-500 font-medium mt-auto">Requires chapter review</p>
+                    </div>
+
+                    <!-- Metric 4 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Chapters</p>
+                            <div class="p-1.5 bg-purple-50 text-purple-600 rounded">
+                                <i class="fa-solid fa-building-flag"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">154</h3>
+                        <p class="text-xs text-gray-500 font-medium mt-auto">Across 36 states & FCT</p>
+                    </div>
+
+                    <!-- Metric 5 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col border-b-4 border-b-red-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Open Grievances</p>
+                            <div class="p-1.5 bg-red-50 text-red-600 rounded">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">3</h3>
+                        <p class="text-xs text-red-500 font-medium mt-auto">Action required</p>
+                    </div>
+
+                    <!-- Metric 6 -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Upcoming Events</p>
+                            <div class="p-1.5 bg-ssucoen-green/10 text-ssucoen-green rounded">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">2</h3>
+                        <p class="text-xs text-gray-500 font-medium mt-auto">Next: Nov 12, 2026</p>
+                    </div>
+                </div>
+
+                <!-- Main Dashboard Split -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Left Area: Recent Registrations Table -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                            <div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center bg-gray-50/50">
+                                <h3 class="text-lg font-bold text-gray-900">Recent Member Registrations</h3>
+                                <a href="#" class="text-sm font-semibold text-ssucoen-green hover:text-ssucoen-lightgreen">View Directory &rarr;</a>
+                            </div>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Member Name</th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Institution / Chapter</th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Date</th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Status</th>
+                                            <th scope="col" class="relative px-6 py-3"><span class="sr-only">Actions</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <!-- Row 1 -->
+                                        <tr class="hover:bg-gray-50 transition-colors">
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs shrink-0">EA</div>
+                                                    <div class="ml-3">
+                                                        <p class="text-sm font-bold text-gray-900">Emmanuel Adebayo</p>
+                                                        <p class="text-xs text-gray-500">emmanuel.a@example.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <p class="text-sm text-gray-900">FCE (T) Akoka</p>
+                                                <p class="text-xs text-gray-500">Lagos State</p>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                Today, 10:42 AM
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2.5 py-1 inline-flex text-xs leading-4 font-bold rounded-full bg-yellow-100 text-yellow-800 border border-yellow-200">
+                                                    Pending Verification
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <button class="text-ssucoen-green hover:text-ssucoen-lightgreen font-bold">Review</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Row 2 -->
+                                        <tr class="hover:bg-gray-50 transition-colors">
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-xs shrink-0">FM</div>
+                                                    <div class="ml-3">
+                                                        <p class="text-sm font-bold text-gray-900">Fatima Mohammed</p>
+                                                        <p class="text-xs text-gray-500">fatima.m@example.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <p class="text-sm text-gray-900">FCE Kano</p>
+                                                <p class="text-xs text-gray-500">Kano State</p>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                Yesterday, 14:30 PM
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2.5 py-1 inline-flex text-xs leading-4 font-bold rounded-full bg-green-100 text-green-800 border border-green-200">
+                                                    Active
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <button class="text-gray-500 hover:text-gray-900"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                            </td>
+                                        </tr>
+                                        <!-- Row 3 -->
+                                        <tr class="hover:bg-gray-50 transition-colors">
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xs shrink-0">CO</div>
+                                                    <div class="ml-3">
+                                                        <p class="text-sm font-bold text-gray-900">Chukwudi Okafor</p>
+                                                        <p class="text-xs text-gray-500">c.okafor@example.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <p class="text-sm text-gray-900">Alvan Ikoku FCE</p>
+                                                <p class="text-xs text-gray-500">Imo State</p>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                Oct 15, 2026
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2.5 py-1 inline-flex text-xs leading-4 font-bold rounded-full bg-green-100 text-green-800 border border-green-200">
+                                                    Active
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <button class="text-gray-500 hover:text-gray-900"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Quick Charts Placeholder area -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                                <h4 class="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide">Membership Growth</h4>
+                                <div class="h-40 w-full bg-gray-50 rounded border border-gray-100 flex items-end p-4 gap-2">
+                                    <!-- Pseudo bar chart -->
+                                    <div class="w-1/6 bg-ssucoen-green/40 hover:bg-ssucoen-green transition-colors rounded-t h-1/3"></div>
+                                    <div class="w-1/6 bg-ssucoen-green/50 hover:bg-ssucoen-green transition-colors rounded-t h-2/5"></div>
+                                    <div class="w-1/6 bg-ssucoen-green/60 hover:bg-ssucoen-green transition-colors rounded-t h-1/2"></div>
+                                    <div class="w-1/6 bg-ssucoen-green/70 hover:bg-ssucoen-green transition-colors rounded-t h-3/5"></div>
+                                    <div class="w-1/6 bg-ssucoen-green/80 hover:bg-ssucoen-green transition-colors rounded-t h-4/5"></div>
+                                    <div class="w-1/6 bg-ssucoen-green hover:bg-ssucoen-lightgreen transition-colors rounded-t h-full relative">
+                                        <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-bold text-ssucoen-green">Cur</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                                <h4 class="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide">Dues Remittance Status</h4>
+                                <div class="h-40 w-full flex items-center justify-center gap-6">
+                                    <!-- Pseudo pie chart -->
+                                    <div class="w-24 h-24 rounded-full border-[16px] border-gray-100 border-t-ssucoen-green border-r-ssucoen-green border-b-ssucoen-green transform -rotate-45 shadow-sm"></div>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center text-sm"><span class="w-3 h-3 rounded-full bg-ssucoen-green mr-2"></span> Up to date (75%)</div>
+                                        <div class="flex items-center text-sm"><span class="w-3 h-3 rounded-full bg-gray-200 mr-2"></span> Pending (25%)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Area: Sidebar Widgets -->
+                    <div class="space-y-6">
+                        
+                        <!-- Open Grievances -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                            <div class="px-5 py-4 border-b border-gray-200 flex justify-between items-center bg-red-50/50">
+                                <h3 class="text-sm font-bold text-gray-900 flex items-center">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i> Action Required
+                                </h3>
+                                <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded">3 Open</span>
+                            </div>
+                            <div class="divide-y divide-gray-100">
+                                <div class="p-4 hover:bg-gray-50 transition-colors">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <span class="text-xs font-bold text-gray-500">GRV-2026-089</span>
+                                        <span class="text-[10px] text-gray-400">2 days ago</span>
+                                    </div>
+                                    <h4 class="text-sm font-bold text-gray-900 mb-1">Promotion Arrears Delay</h4>
+                                    <p class="text-xs text-gray-600 mb-2">Submitted by Chapter Chair, Adeyemi College.</p>
+                                    <button class="text-xs font-bold text-ssucoen-green hover:underline">Assign to Committee</button>
+                                </div>
+                                <div class="p-4 hover:bg-gray-50 transition-colors">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <span class="text-xs font-bold text-gray-500">GRV-2026-088</span>
+                                        <span class="text-[10px] text-gray-400">5 days ago</span>
+                                    </div>
+                                    <h4 class="text-sm font-bold text-gray-900 mb-1">Unjust Suspension Case</h4>
+                                    <p class="text-xs text-gray-600 mb-2">Individual member file, State COE.</p>
+                                    <button class="text-xs font-bold text-ssucoen-green hover:underline">Review Details</button>
+                                </div>
+                            </div>
+                            <div class="p-3 border-t border-gray-100 text-center bg-gray-50 rounded-b-xl">
+                                <a href="#" class="text-sm font-semibold text-gray-600 hover:text-gray-900">View All Grievances</a>
+                            </div>
+                        </div>
+
+                        <!-- System Activity Log -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                            <div class="px-5 py-4 border-b border-gray-200">
+                                <h3 class="text-sm font-bold text-gray-900">Recent Admin Activity</h3>
+                            </div>
+                            <div class="p-5">
+                                <div class="relative border-l border-gray-200 ml-3 space-y-6">
+                                    <div class="relative">
+                                        <span class="absolute -left-4 bg-white border-2 border-ssucoen-green w-3 h-3 rounded-full mt-1.5"></span>
+                                        <div class="pl-4">
+                                            <p class="text-sm text-gray-800"><strong>Document Uploaded</strong></p>
+                                            <p class="text-xs text-gray-500">"Circular 12/2026" published to Member Portal.</p>
+                                            <p class="text-[10px] text-gray-400 mt-0.5">By SysAdmin &bull; 1 hour ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <span class="absolute -left-4 bg-white border-2 border-blue-500 w-3 h-3 rounded-full mt-1.5"></span>
+                                        <div class="pl-4">
+                                            <p class="text-sm text-gray-800"><strong>News Article Published</strong></p>
+                                            <p class="text-xs text-gray-500">"Negotiations Reach Advanced Stage"</p>
+                                            <p class="text-[10px] text-gray-400 mt-0.5">By PRO &bull; Yesterday</p>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <span class="absolute -left-4 bg-white border-2 border-gray-300 w-3 h-3 rounded-full mt-1.5"></span>
+                                        <div class="pl-4">
+                                            <p class="text-sm text-gray-800"><strong>System Backup Completed</strong></p>
+                                            <p class="text-xs text-gray-500">Automated database snapshot.</p>
+                                            <p class="text-[10px] text-gray-400 mt-0.5">System &bull; Yesterday, 00:00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Footer spacer -->
+                <div class="h-8"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts for Admin Dashboard Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const openBtn = document.getElementById('open-sidebar-btn');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            function openSidebar() {
+                sidebar.classList.remove('sidebar-inactive');
+                sidebar.classList.add('sidebar-active');
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    overlay.classList.add('opacity-100');
+                }, 10);
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('sidebar-active');
+                sidebar.classList.add('sidebar-inactive');
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 300);
+            }
+
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
+</body>
+</html>
