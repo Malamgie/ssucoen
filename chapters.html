@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Presence & Chapters | SSUCOEN</title>
+    <meta name="description" content="Explore SSUCOEN's nationwide presence. Find chapters across Federal, State, and private Colleges of Education in Nigeria.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ssucoen: {
+                            green: '#0A4A25',
+                            lightgreen: '#116B38',
+                            gold: '#F2A900',
+                            dark: '#1F2937',
+                            light: '#F9FAFB',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .page-hero-overlay { background: linear-gradient(to right, rgba(10, 74, 37, 0.95) 0%, rgba(10, 74, 37, 0.8) 100%); }
+        .mobile-menu-active { transform: translateX(0%); }
+        .mobile-menu-inactive { transform: translateX(-100%); }
+        
+        /* Custom select styling */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body class="font-sans text-ssucoen-dark antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Utility Bar -->
+    <div class="bg-ssucoen-green text-white py-2 text-xs md:text-sm font-medium">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="hidden md:inline-flex items-center"><i class="fa-solid fa-building-columns mr-2 opacity-80"></i> Official Website of SSUCOEN</span>
+                <span class="md:hidden font-bold tracking-wider">SSUCOEN</span>
+            </div>
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <a href="contact.html" class="hover:text-ssucoen-gold transition-colors duration-200"><i class="fa-solid fa-phone mr-1 md:mr-2 opacity-80"></i><span class="hidden md:inline">National Secretariat</span></a>
+                <a href="login.html" class="bg-ssucoen-gold text-ssucoen-green px-3 py-1 rounded hover:bg-white transition-colors duration-200 font-semibold"><i class="fa-solid fa-user-lock mr-1 md:mr-2"></i>Member Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="glass-nav sticky top-0 z-50 border-b border-gray-200 shadow-sm transition-all duration-300 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" onerror="this.src='https://via.placeholder.com/150x150.png?text=SSUCOEN+Logo'">
+                        <div class="hidden lg:block">
+                            <h1 class="font-serif font-bold text-lg leading-tight text-ssucoen-green">SSUCOEN</h1>
+                            <p class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Labour for Honour and Survival</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden xl:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">About</a>
+                    <a href="leadership.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Leadership</a>
+                    
+                    <a href="chapters.html" class="text-ssucoen-green font-semibold border-b-2 border-ssucoen-gold pb-1 py-2">Chapters</a>
+
+                    <a href="news.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">News</a>
+                    <a href="events.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Events</a>
+                    <a href="documents.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Documents</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Gallery</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden xl:flex items-center">
+                    <a href="contact.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200 mr-6">Contact</a>
+                    <a href="login.html" class="bg-ssucoen-green text-white px-5 py-2.5 rounded hover:bg-ssucoen-lightgreen shadow-md transition-all duration-200 font-medium flex items-center">
+                        Member Access <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="xl:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-ssucoen-green hover:text-ssucoen-lightgreen focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+    <div id="mobile-drawer" class="fixed inset-y-0 left-0 w-[280px] bg-white shadow-2xl z-[70] mobile-menu-inactive transition-transform duration-300 flex flex-col">
+        <div class="p-5 border-b border-gray-100 flex justify-between items-center">
+            <img class="h-10 w-auto" src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" onerror="this.src='https://via.placeholder.com/100x100.png?text=SSUCOEN'">
+            <button id="close-menu-btn" class="text-gray-400 hover:text-gray-600 p-2">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto py-4 px-4">
+            <nav class="space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Home</a>
+                <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">About</a>
+                <a href="leadership.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Leadership</a>
+                <a href="chapters.html" class="block px-3 py-3 rounded-md text-base font-semibold bg-gray-50 text-ssucoen-green">Chapters</a>
+                <a href="news.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">News</a>
+                <a href="events.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Events</a>
+                <a href="documents.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Documents</a>
+                <a href="gallery.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Gallery</a>
+                <a href="contact.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Contact</a>
+            </nav>
+        </div>
+        <div class="p-4 border-t border-gray-100">
+            <a href="login.html" class="w-full flex justify-center items-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-ssucoen-green hover:bg-ssucoen-lightgreen">
+                Member Access
+            </a>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+        
+        <!-- Page Hero -->
+        <section class="relative bg-ssucoen-green py-20 lg:py-24 overflow-hidden border-b-[6px] border-ssucoen-gold">
+            <div class="absolute inset-0 z-0">
+                <img src="hero-chapters.webp" alt="Map of Nigeria abstract" class="w-full h-full object-cover object-center opacity-10" onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'">
+                <div class="absolute inset-0 page-hero-overlay"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Breadcrumbs -->
+                <nav class="flex justify-center mb-6" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3 text-sm text-gray-300">
+                        <li class="inline-flex items-center">
+                            <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-chevron-right text-xs mx-2"></i>
+                                <span class="text-ssucoen-gold font-medium" aria-current="page">Chapters</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+                
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">National Presence</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto font-light">
+                    Explore SSUCOEN's expansive network across Federal and State Colleges of Education in all geopolitical zones of Nigeria.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search & Filter Area -->
+        <section class="py-8 bg-white border-b border-gray-200 shadow-sm relative z-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <form class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                        
+                        <!-- Search Input -->
+                        <div class="md:col-span-5 relative">
+                            <label for="search" class="sr-only">Search Chapter</label>
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                            </div>
+                            <input type="text" name="search" id="search" class="focus:ring-ssucoen-green focus:border-ssucoen-green block w-full pl-10 pr-3 py-3 sm:text-sm border-gray-300 rounded-md border" placeholder="Search by institution name...">
+                        </div>
+                        
+                        <!-- State Filter -->
+                        <div class="md:col-span-3">
+                            <label for="state" class="sr-only">Filter by State</label>
+                            <select id="state" name="state" class="focus:ring-ssucoen-green focus:border-ssucoen-green block w-full py-3 px-3 sm:text-sm border-gray-300 rounded-md border text-gray-700 bg-white">
+                                <option value="">All States</option>
+                                <option value="FCT">FCT - Abuja</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Rivers">Rivers</option>
+                                <!-- More states... -->
+                                <option value="Other">More States...</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Institution Type Filter -->
+                        <div class="md:col-span-3">
+                            <label for="type" class="sr-only">Institution Type</label>
+                            <select id="type" name="type" class="focus:ring-ssucoen-green focus:border-ssucoen-green block w-full py-3 px-3 sm:text-sm border-gray-300 rounded-md border text-gray-700 bg-white">
+                                <option value="">All Institution Types</option>
+                                <option value="Federal">Federal College of Education</option>
+                                <option value="State">State College of Education</option>
+                                <option value="Private">Private College of Education</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="md:col-span-1">
+                            <button type="button" class="w-full h-full min-h-[46px] bg-ssucoen-green hover:bg-ssucoen-lightgreen text-white font-medium rounded-md shadow-sm flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-filter md:hidden mr-2"></i>
+                                <span class="md:hidden">Filter</span>
+                                <i class="fa-solid fa-arrow-right hidden md:block"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter Directory List -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-serif font-bold text-gray-900">Registered Chapters Directory</h2>
+                    <span class="text-sm font-medium text-gray-500 bg-gray-200 px-3 py-1 rounded-full">Showing Demo Records</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Chapter Card 1 (Federal) -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full">
+                        <div class="p-5 border-b border-gray-100 flex justify-between items-start">
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded mb-2 border border-green-100">Federal</span>
+                                <h3 class="font-bold text-lg text-gray-900 leading-tight">Federal College of Education (Technical), Akoka</h3>
+                            </div>
+                            <div class="flex-shrink-0 ml-4">
+                                <div class="w-10 h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-building-columns text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-grow">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-map-location-dot text-ssucoen-gold mt-1 mr-3 w-4"></i>
+                                    <span><strong>State:</strong> Lagos State</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-user-tie text-ssucoen-green mt-1 mr-3 w-4"></i>
+                                    <span><strong>Chairman:</strong> Comrade [Placeholder Name]</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-envelope text-gray-400 mt-1 mr-3 w-4"></i>
+                                    <span>fcetakoka@ssucoen.org.ng</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <button class="text-ssucoen-green font-medium text-sm hover:text-ssucoen-lightgreen w-full">View Chapter Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Chapter Card 2 (State) -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full">
+                        <div class="p-5 border-b border-gray-100 flex justify-between items-start">
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-2 border border-blue-100">State</span>
+                                <h3 class="font-bold text-lg text-gray-900 leading-tight">Adeyemi College of Education</h3>
+                            </div>
+                            <div class="flex-shrink-0 ml-4">
+                                <div class="w-10 h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-building-columns text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-grow">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-map-location-dot text-ssucoen-gold mt-1 mr-3 w-4"></i>
+                                    <span><strong>State:</strong> Ondo State</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-user-tie text-ssucoen-green mt-1 mr-3 w-4"></i>
+                                    <span><strong>Chairman:</strong> Comrade [Placeholder Name]</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-envelope text-gray-400 mt-1 mr-3 w-4"></i>
+                                    <span>adeyemi@ssucoen.org.ng</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <button class="text-ssucoen-green font-medium text-sm hover:text-ssucoen-lightgreen w-full">View Chapter Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Chapter Card 3 (Federal) -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full">
+                        <div class="p-5 border-b border-gray-100 flex justify-between items-start">
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded mb-2 border border-green-100">Federal</span>
+                                <h3 class="font-bold text-lg text-gray-900 leading-tight">Federal College of Education, Zaria</h3>
+                            </div>
+                            <div class="flex-shrink-0 ml-4">
+                                <div class="w-10 h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-building-columns text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-grow">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-map-location-dot text-ssucoen-gold mt-1 mr-3 w-4"></i>
+                                    <span><strong>State:</strong> Kaduna State</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-user-tie text-ssucoen-green mt-1 mr-3 w-4"></i>
+                                    <span><strong>Chairman:</strong> Comrade [Placeholder Name]</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-envelope text-gray-400 mt-1 mr-3 w-4"></i>
+                                    <span>fcezaria@ssucoen.org.ng</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <button class="text-ssucoen-green font-medium text-sm hover:text-ssucoen-lightgreen w-full">View Chapter Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chapter Card 4 (Federal) -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full">
+                        <div class="p-5 border-b border-gray-100 flex justify-between items-start">
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded mb-2 border border-green-100">Federal</span>
+                                <h3 class="font-bold text-lg text-gray-900 leading-tight">Federal College of Education, Kano</h3>
+                            </div>
+                            <div class="flex-shrink-0 ml-4">
+                                <div class="w-10 h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-building-columns text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-grow">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-map-location-dot text-ssucoen-gold mt-1 mr-3 w-4"></i>
+                                    <span><strong>State:</strong> Kano State</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-user-tie text-ssucoen-green mt-1 mr-3 w-4"></i>
+                                    <span><strong>Chairman:</strong> Comrade [Placeholder Name]</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-envelope text-gray-400 mt-1 mr-3 w-4"></i>
+                                    <span>fcekano@ssucoen.org.ng</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <button class="text-ssucoen-green font-medium text-sm hover:text-ssucoen-lightgreen w-full">View Chapter Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Chapter Card 5 (State) -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full">
+                        <div class="p-5 border-b border-gray-100 flex justify-between items-start">
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-2 border border-blue-100">State</span>
+                                <h3 class="font-bold text-lg text-gray-900 leading-tight">College of Education, Akwanga</h3>
+                            </div>
+                            <div class="flex-shrink-0 ml-4">
+                                <div class="w-10 h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-building-columns text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-grow">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-map-location-dot text-ssucoen-gold mt-1 mr-3 w-4"></i>
+                                    <span><strong>State:</strong> Nasarawa State</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-user-tie text-ssucoen-green mt-1 mr-3 w-4"></i>
+                                    <span><strong>Chairman:</strong> Comrade [Placeholder Name]</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-envelope text-gray-400 mt-1 mr-3 w-4"></i>
+                                    <span>coeakwanga@ssucoen.org.ng</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <button class="text-ssucoen-green font-medium text-sm hover:text-ssucoen-lightgreen w-full">View Chapter Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Chapter Card 6 (Federal) -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full">
+                        <div class="p-5 border-b border-gray-100 flex justify-between items-start">
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded mb-2 border border-green-100">Federal</span>
+                                <h3 class="font-bold text-lg text-gray-900 leading-tight">Alvan Ikoku Federal College of Education</h3>
+                            </div>
+                            <div class="flex-shrink-0 ml-4">
+                                <div class="w-10 h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-building-columns text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-grow">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-map-location-dot text-ssucoen-gold mt-1 mr-3 w-4"></i>
+                                    <span><strong>State:</strong> Imo State</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-user-tie text-ssucoen-green mt-1 mr-3 w-4"></i>
+                                    <span><strong>Chairman:</strong> Comrade [Placeholder Name]</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-envelope text-gray-400 mt-1 mr-3 w-4"></i>
+                                    <span>alvan@ssucoen.org.ng</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <button class="text-ssucoen-green font-medium text-sm hover:text-ssucoen-lightgreen w-full">View Chapter Details</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-12 flex justify-center">
+                    <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                        <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Previous</span>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <!-- Current: "z-10 bg-ssucoen-green border-ssucoen-green text-white", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
+                        <a href="#" aria-current="page" class="z-10 bg-ssucoen-green border-ssucoen-green text-white relative inline-flex items-center px-4 py-2 border text-sm font-medium">1</a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">2</a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">3</a>
+                        <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">...</span>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">8</a>
+                        <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Next</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zonal Structure -->
+        <section class="py-16 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-8 items-center bg-ssucoen-light rounded-2xl p-8 lg:p-12 border border-gray-100">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-ssucoen-green/10 flex items-center justify-center border-4 border-white shadow-inner">
+                            <i class="fa-solid fa-network-wired text-5xl md:text-7xl text-ssucoen-green"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 text-center md:text-left">
+                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-4">SSUCOEN Zonal Structure</h2>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            To ensure effective administration and grassroots mobilization, our chapters are organized into Geopolitical Zones, each coordinated by a Zonal Vice President who represents the region at the National Executive Council.
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                            <span class="bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">North West</span>
+                            <span class="bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">North East</span>
+                            <span class="bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">North Central</span>
+                            <span class="bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">South West</span>
+                            <span class="bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">South East</span>
+                            <span class="bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">South South</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-[6px] border-ssucoen-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Column -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6 bg-white p-3 rounded inline-block">
+                        <img src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" class="h-12 w-auto" onerror="this.src='https://via.placeholder.com/150x150.png?text=Logo'">
+                    </div>
+                    <h3 class="font-serif font-bold text-lg mb-2 text-gray-100">Senior Staff Union in Colleges of Education, Nigeria</h3>
+                    <p class="text-sm text-ssucoen-gold font-bold uppercase tracking-wider mb-4">Labour for Honour and Survival</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        The official national body advocating for the welfare and professional interests of senior non-teaching staff in Colleges of Education across Nigeria.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> About SSUCOEN</a></li>
+                        <li><a href="leadership.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> National Leadership</a></li>
+                        <li><a href="chapters.html" class="text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Our Chapters</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> News & Press Releases</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Events Calendar</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Photo Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Member Resources -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Member Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="login.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Member Portal Login</a></li>
+                        <li><a href="register.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Account Registration</a></li>
+                        <li><a href="documents.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Document Library</a></li>
+                        <li><a href="documents.html#constitution" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Union Constitution</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Support & Grievances</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Contact Secretariat</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 text-ssucoen-gold mr-3 w-4 text-center"></i>
+                            <span class="text-gray-400 text-sm leading-relaxed">
+                                [Placeholder Address]<br>
+                                National Secretariat,<br>
+                                FCT, Abuja, Nigeria
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone text-ssucoen-gold mr-3 w-4 text-center"></i>
+                            <span class="text-gray-400 text-sm">[Official Phone Number]</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope text-ssucoen-gold mr-3 w-4 text-center"></i>
+                            <span class="text-gray-400 text-sm">info@ssucoen.org.ng</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Senior Staff Union in Colleges of Education, Nigeria (SSUCOEN). All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-drawer-overlay');
+            const body = document.body;
+
+            function openMenu() {
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    overlay.classList.add('opacity-100');
+                    drawer.classList.remove('mobile-menu-inactive');
+                    drawer.classList.add('mobile-menu-active');
+                }, 10);
+                body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0');
+                drawer.classList.remove('mobile-menu-active');
+                drawer.classList.add('mobile-menu-inactive');
+                
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 300);
+                body.style.overflow = 'auto';
+            }
+
+            mobileBtn.addEventListener('click', openMenu);
+            closeBtn.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>
