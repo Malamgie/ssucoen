@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Registration | SSUCOEN Secure Portal</title>
+    <meta name="description" content="Register for your official Senior Staff Union in Colleges of Education, Nigeria (SSUCOEN) member account.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ssucoen: {
+                            green: '#0A4A25',
+                            lightgreen: '#116B38',
+                            gold: '#F2A900',
+                            dark: '#1F2937',
+                            light: '#F9FAFB',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .register-bg {
+            background-color: #f3f4f6;
+            background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%230a4a25\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+        /* Custom select styling */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body class="font-sans text-ssucoen-dark antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Utility Bar -->
+    <div class="bg-ssucoen-green text-white py-2 text-xs md:text-sm font-medium">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center"><i class="fa-solid fa-building-columns mr-2 opacity-80"></i> SSUCOEN Official</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="contact.html" class="hover:text-ssucoen-gold transition-colors duration-200"><i class="fa-solid fa-headset mr-1 md:mr-2 opacity-80"></i><span class="hidden sm:inline">Portal Support</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation (Simplified for Auth Page) -->
+    <header class="glass-nav sticky top-0 z-50 border-b border-gray-200 shadow-sm bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" onerror="this.src='https://via.placeholder.com/150x150.png?text=SSUCOEN+Logo'">
+                        <div>
+                            <h1 class="font-serif font-bold text-lg leading-tight text-ssucoen-green">SSUCOEN</h1>
+                            <p class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold hidden sm:block">Secure Member Portal</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop CTA -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-ssucoen-green">Back to Main Website</a>
+                    <a href="login.html" class="bg-ssucoen-green text-white px-4 py-2 rounded text-sm hover:bg-ssucoen-lightgreen transition-colors font-medium">
+                        Member Login
+                    </a>
+                </div>
+                
+                <!-- Mobile Actions -->
+                <div class="sm:hidden flex items-center gap-4">
+                    <a href="login.html" class="text-sm font-semibold text-ssucoen-green">Login</a>
+                    <a href="index.html" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-house"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 register-bg relative">
+        <div class="absolute top-0 left-0 w-full h-64 bg-ssucoen-green z-0"></div>
+        
+        <div class="max-w-3xl w-full bg-white rounded-2xl shadow-2xl relative z-10 border border-gray-100 overflow-hidden">
+            
+            <!-- Header -->
+            <div class="bg-gray-50 border-b border-gray-100 p-8 sm:p-10 text-center">
+                <div class="mx-auto h-16 w-16 bg-white rounded-full flex items-center justify-center mb-4 border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-user-plus text-3xl text-ssucoen-green"></i>
+                </div>
+                <h2 class="text-3xl font-serif font-bold text-gray-900">Create Membership Account</h2>
+                <p class="mt-2 text-sm text-gray-600 max-w-lg mx-auto">
+                    Register to access your official SSUCOEN portal. Your details will be cross-referenced with chapter records for verification.
+                </p>
+            </div>
+            
+            <form class="p-8 sm:p-10 space-y-8" action="member/dashboard.html" method="GET">
+                
+                <!-- Section 1: Personal Details -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4 border-b border-gray-100 pb-2">
+                        <i class="fa-regular fa-id-card text-ssucoen-gold"></i>
+                        <h3 class="text-lg font-bold text-gray-900">Personal Information</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="sm:col-span-2">
+                            <label for="full-name" class="block text-sm font-medium text-gray-700 mb-1">Full Legal Name <span class="text-red-500">*</span></label>
+                            <input id="full-name" name="full-name" type="text" required class="appearance-none rounded-md relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm" placeholder="e.g. Comrade John Doe">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                            <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none rounded-md relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm" placeholder="your@email.com">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number <span class="text-red-500">*</span></label>
+                            <input id="phone" name="phone" type="tel" required class="appearance-none rounded-md relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm" placeholder="e.g. 0800 000 0000">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Institutional Details -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4 border-b border-gray-100 pb-2">
+                        <i class="fa-solid fa-building-columns text-ssucoen-gold"></i>
+                        <h3 class="text-lg font-bold text-gray-900">Institutional Details</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State of Institution <span class="text-red-500">*</span></label>
+                            <select id="state" name="state" required class="rounded-md relative block w-full px-3 py-2.5 border border-gray-300 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm bg-white">
+                                <option value="" disabled selected>Select State</option>
+                                <option value="FCT">Federal Capital Territory</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <!-- Truncated for prototype -->
+                                <option value="Other">Other...</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="institution" class="block text-sm font-medium text-gray-700 mb-1">College / Institution <span class="text-red-500">*</span></label>
+                            <select id="institution" name="institution" required class="rounded-md relative block w-full px-3 py-2.5 border border-gray-300 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm bg-white">
+                                <option value="" disabled selected>Select Institution</option>
+                                <option value="fce-akoka">FCE (Technical) Akoka</option>
+                                <option value="adeyemi">Adeyemi College of Education</option>
+                                <option value="fce-zaria">FCE Zaria</option>
+                                <option value="fce-kano">FCE Kano</option>
+                                <option value="other">My institution is not listed</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="staff-category" class="block text-sm font-medium text-gray-700 mb-1">Staff Category <span class="text-red-500">*</span></label>
+                            <select id="staff-category" name="staff-category" required class="rounded-md relative block w-full px-3 py-2.5 border border-gray-300 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm bg-white">
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="admin">Administrative</option>
+                                <option value="technical">Technical / Engineering</option>
+                                <option value="medical">Medical / Health</option>
+                                <option value="library">Library / ICT</option>
+                                <option value="other">Other Senior Staff</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="member-id" class="block text-sm font-medium text-gray-700 mb-1">Membership ID (Optional)</label>
+                            <input id="member-id" name="member-id" type="text" class="appearance-none rounded-md relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm" placeholder="If known (e.g. SSU-1234)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Security -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4 border-b border-gray-100 pb-2">
+                        <i class="fa-solid fa-lock text-ssucoen-gold"></i>
+                        <h3 class="text-lg font-bold text-gray-900">Account Security</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password <span class="text-red-500">*</span></label>
+                            <input id="password" name="password" type="password" required class="appearance-none rounded-md relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm" placeholder="••••••••">
+                            <p class="mt-1 text-xs text-gray-500">Must be at least 8 characters long.</p>
+                        </div>
+                        
+                        <div>
+                            <label for="confirm-password" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password <span class="text-red-500">*</span></label>
+                            <input id="confirm-password" name="confirm-password" type="password" required class="appearance-none rounded-md relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-ssucoen-green focus:border-ssucoen-green sm:text-sm" placeholder="••••••••">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agreements & Submit -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-ssucoen-green focus:ring-ssucoen-green border-gray-300 rounded cursor-pointer">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="terms" class="font-medium text-gray-700 cursor-pointer">I agree to the Union's Terms and Conditions <span class="text-red-500">*</span></label>
+                                <p class="text-gray-500">By registering, I confirm that I am a bonafide senior non-teaching staff member of a recognized College of Education in Nigeria.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <input id="privacy" name="privacy" type="checkbox" required class="h-4 w-4 text-ssucoen-green focus:ring-ssucoen-green border-gray-300 rounded cursor-pointer">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="privacy" class="font-medium text-gray-700 cursor-pointer">I accept the Privacy Policy <span class="text-red-500">*</span></label>
+                                <p class="text-gray-500">I consent to the collection and processing of my data for union administrative purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- Changing button type to button with onClick location redirect for prototyping purposes -->
+                        <button type="button" onclick="window.location.href='member/dashboard.html'" class="w-full flex justify-center py-3.5 px-4 border border-transparent text-sm font-bold rounded-md text-white bg-ssucoen-green hover:bg-ssucoen-lightgreen focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ssucoen-green transition-colors shadow-md">
+                            Create Membership Account
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="bg-gray-50 border-t border-gray-100 px-8 py-6 text-center">
+                <p class="text-sm text-gray-600">
+                    Already have a portal account? 
+                    <a href="login.html" class="font-bold text-ssucoen-green hover:text-ssucoen-lightgreen border-b border-transparent hover:border-ssucoen-green transition-all pb-0.5">
+                        Log in here
+                    </a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 border-t-[6px] border-ssucoen-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy; 2026 SSUCOEN. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Portal Help</a>
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
