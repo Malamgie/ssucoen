@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Leadership | SSUCOEN</title>
-    <meta name="description" content="Meet the National Executive Council (NEC) and leadership of the Senior Staff Union in Colleges of Education, Nigeria (SSUCOEN).">
+    <title>Leadership | Senior Staff Union in Colleges of Education, Nigeria</title>
+    <meta name="description" content="Meet the National Executive Council, Zonal Leaders, and discover the organizational structure of SSUCOEN.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,101 +21,84 @@
             theme: {
                 extend: {
                     colors: {
-                        ssucoen: {
-                            green: '#0A4A25',
-                            lightgreen: '#116B38',
-                            gold: '#F2A900',
-                            dark: '#1F2937',
-                            light: '#F9FAFB',
-                        }
+                        primary: '#064e3b',    /* Deep institutional green */
+                        secondary: '#15803d',  /* SSUCOEN green */
+                        accent: '#eab308',     /* Gold/yellow inspired by logo */
+                        dark: '#0f172a',       /* Deep charcoal */
+                        muted: '#64748b',      /* Professional neutral gray */
+                        light: '#f8fafc',      /* Subtle warm neutral */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Merriweather', 'serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <style>
-        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-        .page-hero-overlay { background: linear-gradient(to right, rgba(10, 74, 37, 0.95) 0%, rgba(10, 74, 37, 0.8) 100%); }
-        .mobile-menu-active { transform: translateX(0%); }
-        .mobile-menu-inactive { transform: translateX(-100%); }
-        
-        /* Leadership specific styling */
-        .leader-card-hover:hover .leader-overlay { opacity: 1; }
-        .leader-overlay { transition: opacity 0.3s ease; }
-    </style>
 </head>
-<body class="font-sans text-ssucoen-dark antialiased bg-gray-50 flex flex-col min-h-screen">
+<body class="font-sans text-dark bg-light antialiased flex flex-col min-h-screen">
 
-    <!-- Utility Bar -->
-    <div class="bg-ssucoen-green text-white py-2 text-xs md:text-sm font-medium">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+    <!-- Top Utility Bar -->
+    <div class="bg-primary text-white text-xs md:text-sm py-2 px-4 md:px-8 border-b border-secondary/30 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <span class="hidden md:inline-flex items-center"><i class="fa-solid fa-building-columns mr-2 opacity-80"></i> Official Website of SSUCOEN</span>
-                <span class="md:hidden font-bold tracking-wider">SSUCOEN</span>
+                <span class="font-medium tracking-wide">Official Website of SSUCOEN</span>
+                <span class="text-white/40">|</span>
+                <span>National Secretariat</span>
             </div>
-            <div class="flex items-center space-x-4 md:space-x-6">
-                <a href="contact.html" class="hover:text-ssucoen-gold transition-colors duration-200"><i class="fa-solid fa-phone mr-1 md:mr-2 opacity-80"></i><span class="hidden md:inline">National Secretariat</span></a>
-                <a href="login.html" class="bg-ssucoen-gold text-ssucoen-green px-3 py-1 rounded hover:bg-white transition-colors duration-200 font-semibold"><i class="fa-solid fa-user-lock mr-1 md:mr-2"></i>Member Portal</a>
+            <div class="flex items-center space-x-6">
+                <a href="contact.html" class="hover:text-accent transition-colors duration-200">Contact</a>
+                <a href="member/dashboard.html" class="font-semibold text-accent hover:text-white transition-colors duration-200 flex items-center gap-1">
+                    <i class="fa-solid fa-user-circle"></i> Member Portal
+                </a>
             </div>
         </div>
     </div>
 
     <!-- Main Navigation -->
-    <header class="glass-nav sticky top-0 z-50 border-b border-gray-200 shadow-sm transition-all duration-300 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center gap-3 group">
-                        <img class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="logo.webp" alt="SSUCOEN Logo" onerror="this.src='https://via.placeholder.com/150x150.png?text=SSUCOEN+Logo'">
-                        <div class="hidden lg:block">
-                            <h1 class="font-serif font-bold text-lg leading-tight text-ssucoen-green">SSUCOEN</h1>
-                            <p class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Labour for Honour and Survival</p>
-                        </div>
-                    </a>
-                </div>
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="logo.webp" alt="SSUCOEN Logo" class="h-12 w-12 md:h-16 md:w-16 object-contain transition-transform group-hover:scale-105">
+                    <div class="hidden sm:block">
+                        <h1 class="font-bold text-primary text-lg md:text-xl leading-tight tracking-tight">SSUCOEN</h1>
+                        <p class="text-xs text-muted font-medium tracking-wide">Labour for Honour and Survival</p>
+                    </div>
+                </a>
 
-                <!-- Desktop Menu -->
-                <nav class="hidden xl:flex space-x-8 items-center">
-                    <a href="index.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">About</a>
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-4">
+                    <a href="about.html" class="px-3 py-2 text-sm font-semibold text-dark hover:text-primary transition-colors">About</a>
                     
+                    <!-- Dropdown: Leadership (Active) -->
                     <div class="relative group">
-                        <a href="leadership.html" class="text-ssucoen-green font-semibold border-b-2 border-ssucoen-gold pb-1 flex items-center py-2">
-                            Leadership <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        <a href="leadership.html" class="px-3 py-2 text-sm font-semibold text-primary border-b-2 border-primary flex items-center gap-1">
+                            Leadership <i class="fa-solid fa-chevron-down text-[10px] text-primary"></i>
                         </a>
-                        <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left z-50">
-                            <div class="py-2">
-                                <a href="leadership.html" class="block px-4 py-2 text-sm text-ssucoen-green bg-gray-50 font-bold">National Executives</a>
-                                <a href="#secretariat" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">The Secretariat</a>
-                                <a href="#committees" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Standing Committees</a>
-                            </div>
+                        <div class="absolute top-full left-0 w-56 bg-white shadow-lg border border-gray-100 rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+                            <a href="#national" class="block px-4 py-3 text-sm text-gray-700 hover:bg-light hover:text-primary border-b border-gray-50">National Leadership</a>
+                            <a href="#zonal" class="block px-4 py-3 text-sm text-gray-700 hover:bg-light hover:text-primary border-b border-gray-50">Zonal Leadership</a>
+                            <a href="#structure" class="block px-4 py-3 text-sm text-gray-700 hover:bg-light hover:text-primary">Organizational Structure</a>
                         </div>
                     </div>
 
-                    <a href="chapters.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Chapters</a>
-                    <a href="news.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">News</a>
-                    <a href="events.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Events</a>
-                    <a href="documents.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Documents</a>
-                    <a href="gallery.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200">Gallery</a>
+                    <a href="chapters.html" class="px-3 py-2 text-sm font-semibold text-dark hover:text-primary transition-colors">Chapters</a>
+                    <a href="news.html" class="px-3 py-2 text-sm font-semibold text-dark hover:text-primary transition-colors">News</a>
+                    <a href="events.html" class="px-3 py-2 text-sm font-semibold text-dark hover:text-primary transition-colors">Events</a>
+                    <a href="documents.html" class="px-3 py-2 text-sm font-semibold text-dark hover:text-primary transition-colors">Documents</a>
+                    <a href="gallery.html" class="px-3 py-2 text-sm font-semibold text-dark hover:text-primary transition-colors">Gallery</a>
+                    <a href="contact.html" class="px-3 py-2 text-sm font-semibold text-dark hover:text-primary transition-colors">Contact</a>
                 </nav>
 
-                <!-- Desktop CTA -->
-                <div class="hidden xl:flex items-center">
-                    <a href="contact.html" class="text-gray-600 hover:text-ssucoen-green font-medium transition-colors duration-200 mr-6">Contact</a>
-                    <a href="login.html" class="bg-ssucoen-green text-white px-5 py-2.5 rounded hover:bg-ssucoen-lightgreen shadow-md transition-all duration-200 font-medium flex items-center">
-                        Member Access <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="login.html" class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-primary hover:bg-secondary rounded-md shadow-sm transition-all duration-200 gap-2">
+                        Member Portal <i class="fa-solid fa-arrow-right-to-bracket"></i>
                     </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="xl:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-ssucoen-green hover:text-ssucoen-lightgreen focus:outline-none p-2">
+                    
+                    <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center p-2 text-primary hover:bg-light rounded-md transition-colors" aria-label="Open menu">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -123,198 +106,262 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Drawer -->
-    <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
-    <div id="mobile-drawer" class="fixed inset-y-0 left-0 w-[280px] bg-white shadow-2xl z-[70] mobile-menu-inactive transition-transform duration-300 flex flex-col">
-        <div class="p-5 border-b border-gray-100 flex justify-between items-center">
-            <img class="h-10 w-auto" src="IMG-20260917-WA0025_2.jpg" alt="SSUCOEN Logo" onerror="this.src='https://via.placeholder.com/100x100.png?text=SSUCOEN'">
-            <button id="close-menu-btn" class="text-gray-400 hover:text-gray-600 p-2">
-                <i class="fa-solid fa-times text-xl"></i>
-            </button>
-        </div>
-        <div class="flex-1 overflow-y-auto py-4 px-4">
-            <nav class="space-y-1">
-                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Home</a>
-                <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">About</a>
-                <a href="leadership.html" class="block px-3 py-3 rounded-md text-base font-semibold bg-gray-50 text-ssucoen-green">Leadership</a>
-                <a href="chapters.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Chapters</a>
-                <a href="news.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">News</a>
-                <a href="events.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Events</a>
-                <a href="documents.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Documents</a>
-                <a href="gallery.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Gallery</a>
-                <a href="contact.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-ssucoen-green">Contact</a>
-            </nav>
-        </div>
-        <div class="p-4 border-t border-gray-100">
-            <a href="login.html" class="w-full flex justify-center items-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-ssucoen-green hover:bg-ssucoen-lightgreen">
-                Member Access
-            </a>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark/50 z-[60] opacity-0 invisible transition-all duration-300">
+        <div class="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col" id="mobile-menu-panel">
+            <div class="p-6 flex justify-between items-center border-b border-gray-100">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="logo.webp" alt="SSUCOEN Logo" class="h-10 w-10 object-contain">
+                    <span class="font-bold text-primary text-lg">SSUCOEN</span>
+                </a>
+                <button id="close-menu-btn" class="p-2 text-gray-500 hover:text-primary hover:bg-light rounded-md transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto py-4 px-6 space-y-1">
+                <a href="index.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">Home</a>
+                <a href="about.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">About</a>
+                <a href="leadership.html" class="block py-3 text-base font-semibold text-primary border-b border-gray-50">Leadership</a>
+                <a href="chapters.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">Chapters</a>
+                <a href="news.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">News</a>
+                <a href="events.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">Events</a>
+                <a href="documents.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">Documents</a>
+                <a href="gallery.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">Gallery</a>
+                <a href="contact.html" class="block py-3 text-base font-semibold text-dark hover:text-primary border-b border-gray-50">Contact</a>
+            </div>
+
+            <div class="p-6 bg-light mt-auto border-t border-gray-200">
+                <a href="login.html" class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-primary rounded-md shadow-sm mb-3 gap-2">
+                    Member Portal <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+                <div class="text-xs text-muted text-center flex flex-col gap-1">
+                    <span><i class="fa-solid fa-envelope mr-1"></i> [Official Email]</span>
+                    <span><i class="fa-solid fa-phone mr-1"></i> [Official Phone]</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <main class="flex-grow">
         
-        <!-- Page Hero -->
-        <section class="relative bg-ssucoen-green py-20 lg:py-24 overflow-hidden border-b-[6px] border-ssucoen-gold">
-            <div class="absolute inset-0 z-0">
-                <img src="hero-leadership.webp" alt="SSUCOEN Leadership Meeting" class="w-full h-full object-cover object-center opacity-20 grayscale" onerror="this.src='https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'">
-                <div class="absolute inset-0 page-hero-overlay"></div>
+        <!-- Page Hero System -->
+        <section class="bg-primary text-white pt-16 pb-20 relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-10">
+                <div class="absolute right-0 top-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
+                <div class="absolute left-0 bottom-0 w-64 h-64 bg-accent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
             </div>
             
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <!-- Breadcrumbs -->
-                <nav class="flex justify-center mb-6" aria-label="Breadcrumb">
-                    <ol class="inline-flex items-center space-x-1 md:space-x-3 text-sm text-gray-300">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">SSUCOEN Leadership</h1>
+                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 font-medium">
+                    The structured governance network driving our mandate from the national secretariat down to local institutions.
+                </p>
+                
+                <!-- Breadcrumb -->
+                <nav class="flex justify-center" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-2 text-sm font-medium">
                         <li class="inline-flex items-center">
-                            <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                            <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
                         </li>
                         <li>
                             <div class="flex items-center">
-                                <i class="fa-solid fa-chevron-right text-xs mx-2"></i>
-                                <span class="text-ssucoen-gold font-medium" aria-current="page">Leadership</span>
+                                <i class="fa-solid fa-chevron-right text-gray-400 text-[10px] mx-2"></i>
+                                <span class="text-accent">Leadership</span>
                             </div>
                         </li>
                     </ol>
                 </nav>
+            </div>
+        </section>
+
+        <!-- Organizational Hierarchy Visualization -->
+        <section id="structure" class="py-16 bg-white border-b border-gray-100">
+            <div class="max-w-5xl mx-auto px-4 md:px-8 text-center">
+                <div class="mb-2 text-secondary font-bold tracking-wide uppercase text-sm">Governance Model</div>
+                <h2 class="text-3xl font-bold text-dark mb-12">Organizational Structure</h2>
                 
-                <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">National Leadership</h1>
-                <p class="text-xl text-gray-200 max-w-3xl mx-auto font-light">
-                    The National Executive Council (NEC) provides strategic direction, oversees administration, and robustly represents the collective interests of our members nationwide.
-                </p>
-            </div>
-        </section>
-
-        <!-- Principal Officers -->
-        <section class="py-16 lg:py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <div class="inline-flex items-center justify-center gap-2 mb-4">
-                        <span class="w-8 h-0.5 bg-ssucoen-gold"></span>
-                        <span class="text-ssucoen-green font-bold uppercase tracking-wider text-sm">The Executive</span>
-                        <span class="w-8 h-0.5 bg-ssucoen-gold"></span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900">National Executive Council</h2>
-                </div>
-
-                <!-- President (Featured) -->
-                <div class="max-w-4xl mx-auto mb-16">
-                    <div class="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
-                        <div class="w-full md:w-2/5 aspect-[3/4] md:aspect-auto relative bg-gray-200">
-                            <img src="president.webp" alt="National President" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x800.png?text=Official+Portrait'">
-                            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-ssucoen-green to-transparent opacity-80 md:hidden"></div>
-                        </div>
-                        <div class="w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center relative">
-                            <!-- Decorative Quote Mark -->
-                            <i class="fa-solid fa-quote-left text-6xl text-gray-100 absolute top-8 right-8 z-0"></i>
-                            
-                            <div class="relative z-10">
-                                <span class="inline-block px-3 py-1 bg-ssucoen-gold text-ssucoen-green text-xs font-bold rounded uppercase tracking-wider mb-4">National President</span>
-                                <h3 class="text-3xl font-serif font-bold text-gray-900 mb-2">Comrade [Name Placeholder]</h3>
-                                <p class="text-gray-500 font-medium mb-6">[Institution/College Placeholder]</p>
-                                
-                                <div class="prose prose-sm text-gray-600 mb-6">
-                                    <p>The National President serves as the chief executive officer and principal spokesperson of the Union. With a mandate to enforce the Constitution and execute the decisions of the National Delegates Conference, the President leads all negotiations regarding member welfare, policy interventions, and strategic institutional partnerships.</p>
-                                </div>
-                                
-                                <a href="#" class="inline-flex items-center text-ssucoen-green font-bold hover:text-ssucoen-lightgreen group">
-                                    Read Full Profile <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Other Executives Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center max-w-3xl mx-auto relative">
+                    <!-- Connector line -->
+                    <div class="absolute w-1 bg-gray-200 h-full top-0 left-1/2 transform -translate-x-1/2 z-0"></div>
                     
-                    <!-- Deputy President -->
-                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 leader-card-hover group">
-                        <div class="aspect-[4/5] relative bg-gray-200 overflow-hidden">
-                            <img src="leadership-02.webp" alt="Deputy President" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x500.png?text=Official+Portrait'">
-                            <!-- Hover Overlay -->
-                            <div class="absolute inset-0 bg-ssucoen-green/90 opacity-0 leader-overlay flex flex-col justify-center items-center p-6 text-center">
-                                <p class="text-white text-sm mb-4">Assists the President in all executive duties and oversees zonal administrative coordination across the federation.</p>
-                                <a href="#" class="px-4 py-2 border border-white text-white text-sm font-semibold rounded hover:bg-white hover:text-ssucoen-green transition-colors">View Profile</a>
-                            </div>
+                    <!-- National -->
+                    <div class="relative z-10 bg-primary text-white p-6 rounded-xl shadow-lg w-full md:w-3/4 mb-10 border-b-4 border-accent">
+                        <div class="w-12 h-12 bg-white text-primary rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-landmark-flag"></i>
                         </div>
-                        <div class="p-6 text-center border-t-4 border-ssucoen-green">
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">Deputy President</span>
-                            <h3 class="font-serif font-bold text-xl text-gray-900">Comrade [Name]</h3>
+                        <h3 class="text-xl font-bold mb-1">National Executive Council (NEC)</h3>
+                        <p class="text-sm text-gray-200">The highest administrative and executive body of the union, seated in Abuja.</p>
+                    </div>
+
+                    <!-- Zonal -->
+                    <div class="relative z-10 bg-white border border-gray-200 p-6 rounded-xl shadow-md w-full md:w-3/4 mb-10">
+                        <div class="w-12 h-12 bg-light text-primary rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-1">Six Geopolitical Zones</h3>
+                        <p class="text-sm text-gray-600">Coordinating union activities across North-Central, North-East, North-West, South-East, South-South, and South-West regions.</p>
+                    </div>
+
+                    <!-- Local -->
+                    <div class="relative z-10 bg-white border border-gray-200 p-6 rounded-xl shadow-md w-full md:w-3/4 mb-10">
+                        <div class="w-12 h-12 bg-light text-primary rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-1">Local Chapters</h3>
+                        <p class="text-sm text-gray-600">The foundational base of the union operating within individual Colleges of Education nationwide.</p>
+                    </div>
+
+                    <!-- Members -->
+                    <div class="relative z-10 bg-gray-50 border border-gray-200 p-4 rounded-xl shadow-sm w-full md:w-1/2">
+                        <div class="flex justify-center items-center gap-3">
+                            <i class="fa-solid fa-users text-primary text-2xl"></i>
+                            <h3 class="text-lg font-bold text-dark">Our Members</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- National Leadership (NEC) -->
+        <section id="national" class="py-20 bg-light">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">National Executive Council</h2>
+                    <p class="text-gray-600 text-lg">The NEC is responsible for driving national policy, conducting strategic negotiations, and ensuring unity across the federation.</p>
+                </div>
+
+                <!-- Grid of Leaders -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    
+                    <!-- Leader Card Placeholder Template -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-01.webp" alt="National President" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National President</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Chief executive and official spokesperson for the union on all national and statutory matters.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
                         </div>
                     </div>
 
-                    <!-- Secretary General -->
-                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 leader-card-hover group">
-                        <div class="aspect-[4/5] relative bg-gray-200 overflow-hidden">
-                            <img src="leadership-03.webp" alt="Secretary General" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x500.png?text=Official+Portrait'">
-                            <div class="absolute inset-0 bg-ssucoen-green/90 opacity-0 leader-overlay flex flex-col justify-center items-center p-6 text-center">
-                                <p class="text-white text-sm mb-4">Heads the National Secretariat, managing official correspondence, records, and the day-to-day administration of the Union.</p>
-                                <a href="#" class="px-4 py-2 border border-white text-white text-sm font-semibold rounded hover:bg-white hover:text-ssucoen-green transition-colors">View Profile</a>
-                            </div>
+                    <!-- Member 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-02.webp" alt="National Vice President" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
                         </div>
-                        <div class="p-6 text-center border-t-4 border-ssucoen-green">
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">Secretary General</span>
-                            <h3 class="font-serif font-bold text-xl text-gray-900">Comrade [Name]</h3>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National Vice President</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Assists the President and oversees targeted administrative portfolios.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
                         </div>
                     </div>
 
-                    <!-- Treasurer -->
-                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 leader-card-hover group">
-                        <div class="aspect-[4/5] relative bg-gray-200 overflow-hidden">
-                            <img src="leadership-04.webp" alt="Treasurer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x500.png?text=Official+Portrait'">
-                            <div class="absolute inset-0 bg-ssucoen-green/90 opacity-0 leader-overlay flex flex-col justify-center items-center p-6 text-center">
-                                <p class="text-white text-sm mb-4">Custodians of the Union's funds, ensuring transparent financial management, banking relations, and fiscal accountability.</p>
-                                <a href="#" class="px-4 py-2 border border-white text-white text-sm font-semibold rounded hover:bg-white hover:text-ssucoen-green transition-colors">View Profile</a>
-                            </div>
+                    <!-- Member 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-03.webp" alt="National Secretary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
                         </div>
-                        <div class="p-6 text-center border-t-4 border-ssucoen-green">
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">National Treasurer</span>
-                            <h3 class="font-serif font-bold text-xl text-gray-900">Comrade [Name]</h3>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National Secretary</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Coordinates the National Secretariat and manages official correspondence and union records.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
                         </div>
                     </div>
 
-                    <!-- Financial Secretary -->
-                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 leader-card-hover group">
-                        <div class="aspect-[4/5] relative bg-gray-200 overflow-hidden">
-                            <img src="leadership-05.webp" alt="Financial Secretary" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x500.png?text=Official+Portrait'">
-                            <div class="absolute inset-0 bg-ssucoen-green/90 opacity-0 leader-overlay flex flex-col justify-center items-center p-6 text-center">
-                                <p class="text-white text-sm mb-4">Maintains accurate financial records, oversees dues collection from chapters, and prepares fiscal reports for the NEC.</p>
-                                <a href="#" class="px-4 py-2 border border-white text-white text-sm font-semibold rounded hover:bg-white hover:text-ssucoen-green transition-colors">View Profile</a>
-                            </div>
+                    <!-- Member 4 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-placeholder.webp" alt="Assistant National Secretary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
                         </div>
-                        <div class="p-6 text-center border-t-4 border-gray-300 hover:border-ssucoen-gold transition-colors">
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">Financial Secretary</span>
-                            <h3 class="font-serif font-bold text-xl text-gray-900">Comrade [Name]</h3>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">Assistant National Secretary</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Provides administrative support to the National Secretary.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
                         </div>
                     </div>
 
-                    <!-- Publicity Secretary -->
-                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 leader-card-hover group">
-                        <div class="aspect-[4/5] relative bg-gray-200 overflow-hidden">
-                            <img src="leadership-06.webp" alt="Publicity Secretary" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x500.png?text=Official+Portrait'">
-                            <div class="absolute inset-0 bg-ssucoen-green/90 opacity-0 leader-overlay flex flex-col justify-center items-center p-6 text-center">
-                                <p class="text-white text-sm mb-4">Manages the Union's public image, press relations, digital media, and internal communications to all members.</p>
-                                <a href="#" class="px-4 py-2 border border-white text-white text-sm font-semibold rounded hover:bg-white hover:text-ssucoen-green transition-colors">View Profile</a>
-                            </div>
+                    <!-- Member 5 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-placeholder.webp" alt="National Treasurer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
                         </div>
-                        <div class="p-6 text-center border-t-4 border-gray-300 hover:border-ssucoen-gold transition-colors">
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">Publicity Secretary</span>
-                            <h3 class="font-serif font-bold text-xl text-gray-900">Comrade [Name]</h3>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National Treasurer</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Custodian of union funds, ensuring proper disbursement and accounting.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
                         </div>
                     </div>
 
-                    <!-- Internal Auditor -->
-                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 leader-card-hover group">
-                        <div class="aspect-[4/5] relative bg-gray-200 overflow-hidden">
-                            <img src="leadership-07.webp" alt="Internal Auditor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x500.png?text=Official+Portrait'">
-                            <div class="absolute inset-0 bg-ssucoen-green/90 opacity-0 leader-overlay flex flex-col justify-center items-center p-6 text-center">
-                                <p class="text-white text-sm mb-4">Ensures strict compliance with financial regulations, auditing the Union's accounts to guarantee transparency.</p>
-                                <a href="#" class="px-4 py-2 border border-white text-white text-sm font-semibold rounded hover:bg-white hover:text-ssucoen-green transition-colors">View Profile</a>
-                            </div>
+                    <!-- Member 6 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-placeholder.webp" alt="National Financial Secretary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
                         </div>
-                        <div class="p-6 text-center border-t-4 border-gray-300 hover:border-ssucoen-gold transition-colors">
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">Internal Auditor</span>
-                            <h3 class="font-serif font-bold text-xl text-gray-900">Comrade [Name]</h3>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National Financial Sec.</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Maintains accurate financial records and dues collection.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
+                        </div>
+                    </div>
+
+                    <!-- Member 7 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-placeholder.webp" alt="National Publicity Secretary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National Publicity Sec.</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Manages internal and external communications and media relations.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
+                        </div>
+                    </div>
+
+                    <!-- Member 8 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-placeholder.webp" alt="National Women Leader" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National Women Leader</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Champions the welfare, participation, and rights of female members.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
+                        </div>
+                    </div>
+
+                    <!-- Member 9 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-placeholder.webp" alt="Gender Desk Officer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">Gender Desk Officer</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Ensures gender equity and mainstreaming in all union activities.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
+                        </div>
+                    </div>
+
+                    <!-- Member 10 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group">
+                        <div class="aspect-square bg-gray-200 relative overflow-hidden">
+                            <img src="leadership-placeholder.webp" alt="National Auditor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo';">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-bold text-dark mb-1">[Name to be supplied]</h3>
+                            <p class="text-sm font-semibold text-primary mb-3">National Auditor</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Ensures financial transparency and adherence to constitutional accounting practices.</p>
+                            <a href="#" class="text-xs font-bold text-dark hover:text-accent transition-colors uppercase tracking-wider border-b-2 border-transparent hover:border-accent pb-1">View Profile</a>
                         </div>
                     </div>
 
@@ -322,186 +369,368 @@
             </div>
         </section>
 
-        <!-- National Secretariat -->
-        <section id="secretariat" class="py-16 bg-white border-t border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row gap-12 items-center">
-                    <div class="w-full lg:w-1/2">
-                        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">The Administrative Engine</h2>
-                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                            The National Secretariat, located in Abuja, serves as the permanent administrative headquarters of SSUCOEN. It ensures the seamless execution of the Union's mandate, coordinating between the National Executive Council and the various State Chapters.
-                        </p>
-                        <p class="text-gray-600 mb-8 leading-relaxed">
-                            Staffed by dedicated administrative professionals, the Secretariat handles member inquiries, processes grievances, manages official documentation, and organizes the logistical frameworks for national summits and delegates' conferences.
-                        </p>
-                        
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 flex items-start gap-4">
-                            <i class="fa-solid fa-building-flag text-3xl text-ssucoen-gold mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-900 text-lg">Contact the Secretariat</h4>
-                                <p class="text-sm text-gray-500 mb-3">For official correspondence, chapter coordination, and general administrative inquiries.</p>
-                                <a href="contact.html" class="text-ssucoen-green font-semibold hover:underline text-sm">View Contact Details &rarr;</a>
-                            </div>
-                        </div>
+        <!-- Zonal Leadership -->
+        <section id="zonal" class="py-20 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="mb-12 border-b border-gray-200 pb-4 flex flex-col md:flex-row justify-between items-end gap-4">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-dark mb-2">Zonal Leadership</h2>
+                        <p class="text-gray-600 text-lg">Decentralized administration ensuring effective representation across Nigeria's six geopolitical zones.</p>
                     </div>
-                    <div class="w-full lg:w-1/2">
-                        <img src="secretariat.webp" alt="SSUCOEN Secretariat Building" class="rounded-xl shadow-lg w-full" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- North-Central -->
+                    <div class="bg-light p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+                            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold">NC</div>
+                            <h3 class="text-xl font-bold text-dark">North-Central Zone</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Chairman</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Secretary</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Auditor</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Women Leader</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- North-East -->
+                    <div class="bg-light p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+                            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold">NE</div>
+                            <h3 class="text-xl font-bold text-dark">North-East Zone</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Chairman</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Secretary</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Auditor</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Women Leader</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- North-West -->
+                    <div class="bg-light p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+                            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold">NW</div>
+                            <h3 class="text-xl font-bold text-dark">North-West Zone</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Chairman</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Secretary</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Auditor</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Women Leader</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- South-East -->
+                    <div class="bg-light p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+                            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold">SE</div>
+                            <h3 class="text-xl font-bold text-dark">South-East Zone</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Chairman</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Secretary</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Auditor</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Women Leader</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- South-South -->
+                    <div class="bg-light p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+                            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold">SS</div>
+                            <h3 class="text-xl font-bold text-dark">South-South Zone</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Chairman</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Secretary</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Auditor</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Women Leader</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- South-West -->
+                    <div class="bg-light p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+                            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold">SW</div>
+                            <h3 class="text-xl font-bold text-dark">South-West Zone</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Chairman</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Secretary</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Auditor</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                            <li>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide font-bold">Zonal Women Leader</p>
+                                <p class="text-sm font-semibold text-dark">[Name to be supplied]</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Standing Committees -->
-        <section id="committees" class="py-16 bg-ssucoen-green text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Standing Committees</h2>
-                    <p class="text-gray-200 max-w-2xl mx-auto">Specialized bodies constituted to handle specific operational, welfare, and disciplinary matters on behalf of the National Executive Council.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Committee Card -->
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-lg hover:bg-white/15 transition-colors">
-                        <i class="fa-solid fa-scale-balanced text-3xl text-ssucoen-gold mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Disciplinary Committee</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed">Ensures adherence to the Union's code of conduct and investigates allegations of constitutional breaches by members or officers.</p>
+        <!-- Chapter Structure -->
+        <section class="py-20 bg-dark text-white relative">
+            <div class="absolute inset-0 bg-[url('chapter.webp')] opacity-5 bg-cover bg-center" style="background-image: url('chapter.webp');"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    
+                    <div class="lg:w-1/2">
+                        <div class="mb-2 text-accent font-bold tracking-wide uppercase text-sm">Institutional Representation</div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Local Chapter Executives</h2>
+                        <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+                            SSUCOEN's strength lies in its grassroots organization. Every recognized College of Education maintains a democratically elected Local Chapter Executive Council.
+                        </p>
+                        <p class="text-gray-400 mb-8 text-sm leading-relaxed">
+                            These executives serve as the primary interface between members and college management, ensuring workplace harmony and rapid resolution of localized administrative issues.
+                        </p>
+                        <a href="chapters.html" class="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-md font-bold hover:bg-gray-100 transition-colors">
+                            Find a Chapter <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="lg:w-1/2 w-full">
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold text-white mb-6 border-b border-white/10 pb-4">Standard Chapter Structure</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-sm">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Chapter Chairman</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Vice Chairman</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Chapter Secretary</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Assistant Secretary</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Treasurer</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Financial Secretary</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">P.R.O. / Publicity Sec.</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Auditor</span>
+                                </div>
+                                <div class="flex items-center gap-3 sm:col-span-2">
+                                    <i class="fa-solid fa-check text-accent"></i>
+                                    <span class="text-gray-200">Chapter Women Leader</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Committee Card -->
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-lg hover:bg-white/15 transition-colors">
-                        <i class="fa-solid fa-hand-holding-dollar text-3xl text-ssucoen-gold mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Welfare & Benefits Committee</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed">Formulates policies and reviews frameworks regarding member remuneration, health insurance, and retirement benefits.</p>
-                    </div>
-
-                    <!-- Committee Card -->
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-lg hover:bg-white/15 transition-colors">
-                        <i class="fa-solid fa-person-chalkboard text-3xl text-ssucoen-gold mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Education & Training Committee</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed">Develops capacity-building programs, workshops, and recommends educational sponsorships for the professional growth of administrative staff.</p>
-                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-[6px] border-ssucoen-gold">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Premium Footer -->
+    <footer class="bg-dark text-gray-300 pt-16 pb-8 border-t-[6px] border-secondary">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 
-                <!-- Brand Column -->
+                <!-- Brand Col -->
                 <div class="lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-6 bg-white p-3 rounded inline-block">
-                        <img src="logo.webp" alt="SSUCOEN Logo" class="h-12 w-auto" onerror="this.src='https://via.placeholder.com/150x150.png?text=Logo'">
-                    </div>
-                    <h3 class="font-serif font-bold text-lg mb-2 text-gray-100">Senior Staff Union in Colleges of Education, Nigeria</h3>
-                    <p class="text-sm text-ssucoen-gold font-bold uppercase tracking-wider mb-4">Labour for Honour and Survival</p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        The official national body advocating for the welfare and professional interests of senior non-teaching staff in Colleges of Education across Nigeria.
+                    <a href="index.html" class="flex items-center gap-3 mb-6 bg-white/5 p-3 rounded-lg inline-flex">
+                        <img src="logo.webp" alt="SSUCOEN Logo" class="h-12 w-12 object-contain bg-white rounded-sm p-1">
+                        <div>
+                            <h2 class="font-bold text-white text-lg leading-none">SSUCOEN</h2>
+                        </div>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Senior Staff Union in Colleges of Education, Nigeria.<br>
+                        <span class="italic text-accent mt-2 block">"Labour for Honour and Survival"</span>
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-ssucoen-gold hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter text-sm"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="about.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> About SSUCOEN</a></li>
-                        <li><a href="leadership.html" class="text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> National Leadership</a></li>
-                        <li><a href="chapters.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Our Chapters</a></li>
-                        <li><a href="news.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> News & Press Releases</a></li>
-                        <li><a href="events.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Events Calendar</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Photo Gallery</a></li>
+                    <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Organization</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about.html" class="hover:text-accent transition-colors">About SSUCOEN</a></li>
+                        <li><a href="leadership.html" class="hover:text-accent transition-colors text-accent">National Leadership</a></li>
+                        <li><a href="chapters.html" class="hover:text-accent transition-colors">Chapters Directory</a></li>
+                        <li><a href="news.html" class="hover:text-accent transition-colors">News & Press</a></li>
+                        <li><a href="events.html" class="hover:text-accent transition-colors">Upcoming Events</a></li>
+                        <li><a href="gallery.html" class="hover:text-accent transition-colors">Media Gallery</a></li>
                     </ul>
                 </div>
 
-                <!-- Member Resources -->
+                <!-- Resources -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Member Resources</h4>
-                    <ul class="space-y-3">
-                        <li><a href="login.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Member Portal Login</a></li>
-                        <li><a href="register.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Account Registration</a></li>
-                        <li><a href="documents.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Document Library</a></li>
-                        <li><a href="documents.html#constitution" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Union Constitution</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-ssucoen-gold transition-colors text-sm flex items-center"><i class="fa-solid fa-angle-right text-xs mr-2"></i> Support & Grievances</a></li>
+                    <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Member Resources</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="login.html" class="hover:text-accent transition-colors">Member Portal Login</a></li>
+                        <li><a href="register.html" class="hover:text-accent transition-colors">New Registration</a></li>
+                        <li><a href="documents.html" class="hover:text-accent transition-colors">Document Library</a></li>
+                        <li><a href="documents.html#constitution" class="hover:text-accent transition-colors">Union Constitution</a></li>
+                        <li><a href="contact.html" class="hover:text-accent transition-colors">Member Support</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2">Contact Secretariat</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-location-dot mt-1 text-ssucoen-gold mr-3 w-4 text-center"></i>
-                            <span class="text-gray-400 text-sm leading-relaxed">
-                                [Placeholder Address]<br>
-                                National Secretariat,<br>
-                                FCT, Abuja, Nigeria
-                            </span>
+                    <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-6">National Secretariat</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-accent"></i>
+                            <span>[Official Address to be supplied]<br>Abuja, Nigeria.</span>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fa-solid fa-phone text-ssucoen-gold mr-3 w-4 text-center"></i>
-                            <span class="text-gray-400 text-sm">[Official Phone Number]</span>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-accent"></i>
+                            <span>[Official Phone]</span>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fa-solid fa-envelope text-ssucoen-gold mr-3 w-4 text-center"></i>
-                            <span class="text-gray-400 text-sm">info@ssucoen.org.ng</span>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-accent"></i>
+                            <span>[Official Email]</span>
                         </li>
                     </ul>
                 </div>
 
             </div>
-            
-            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                <p>&copy; 2026 Senior Staff Union in Colleges of Education, Nigeria (SSUCOEN). All rights reserved.</p>
-                <div class="mt-4 md:mt-0 space-x-4">
-                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2026 Senior Staff Union in Colleges of Education, Nigeria. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const closeBtn = document.getElementById('close-menu-btn');
-            const drawer = document.getElementById('mobile-drawer');
-            const overlay = document.getElementById('mobile-drawer-overlay');
-            const body = document.body;
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuPanel = document.getElementById('mobile-menu-panel');
 
-            function openMenu() {
-                overlay.classList.remove('hidden');
-                setTimeout(() => {
-                    overlay.classList.remove('opacity-0');
-                    overlay.classList.add('opacity-100');
-                    drawer.classList.remove('mobile-menu-inactive');
-                    drawer.classList.add('mobile-menu-active');
-                }, 10);
-                body.style.overflow = 'hidden';
-            }
+            // Open Mobile Menu
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('opacity-0', 'invisible');
+                mobileMenuPanel.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
 
-            function closeMenu() {
-                overlay.classList.remove('opacity-100');
-                overlay.classList.add('opacity-0');
-                drawer.classList.remove('mobile-menu-active');
-                drawer.classList.add('mobile-menu-inactive');
-                
+            // Close Mobile Menu
+            const closeMenu = () => {
+                mobileMenuPanel.classList.add('translate-x-full');
                 setTimeout(() => {
-                    overlay.classList.add('hidden');
+                    mobileMenu.classList.add('opacity-0', 'invisible');
+                    document.body.style.overflow = '';
                 }, 300);
-                body.style.overflow = 'auto';
-            }
+            };
 
-            mobileBtn.addEventListener('click', openMenu);
-            closeBtn.addEventListener('click', closeMenu);
-            overlay.addEventListener('click', closeMenu);
+            closeMenuBtn.addEventListener('click', closeMenu);
+            mobileMenu.addEventListener('click', (e) => {
+                if(e.target === mobileMenu) closeMenu();
+            });
+            
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
         });
     </script>
 </body>
